@@ -759,35 +759,47 @@ chrome.runtime.onMessage.addListener(async (message, sender, sendResponse) => {
     }
 
     // 4. Start tab (participant) audio recording with URL check!
-    if (message.action === 'startParticipantRecording') {
-        const { currentMeetingTabId } = await chrome.storage.local.get('currentMeetingTabId');
-        if (!currentMeetingTabId) {
-            sendResponse({ status: "error", error: "No meeting tab available. Please click Yes on the meeting page first." });
+  if (message.action === 'startParticipantRecording') {
+    const { currentMeetingTabId } = await chrome.storage.local.get('currentMeetingTabId');
+    if (!currentMeetingTabId) {
+        sendResponse({ status: "error", error: "No meeting tab available. Please click Yes on the meeting page first." });
+        return true;
+    }
+    chrome.tabs.get(currentMeetingTabId, async (tab) => {
+        const url = tab.url || "";
+        if (!url.startsWith("http")) {
+            sendResponse({ status: "error", error: "Cannot capture system or extension pages. Try on a normal site." });
             return true;
         }
-        chrome.tabs.get(currentMeetingTabId, async (tab) => {
-            const url = tab.url || "";
-            if (!url.startsWith("http")) {
-                sendResponse({ status: "error", error: "Cannot capture system or extension pages. Try on a normal site." });
-                return true;
-            }
-            try {
-                await setupOffscreenDocument();
-                const streamId = await chrome.tabCapture.getMediaStreamId({ targetTabId: currentMeetingTabId });
+        try {
+            await setupOffscreenDocument();
+            const streamId = await chrome.tabCapture.getMediaStreamId({ targetTabId: currentMeetingTabId });
+
+            // LOG for debugging
+            console.log("[Background] Will send startRecording to offscreen with streamId:", streamId);
+
+            // Add a small delay to ensure offscreen doc is ready
+            setTimeout(() => {
+                // LOG for debugging
+                console.log("[Background] Actually sending startRecording to offscreen (after delay)");
                 chrome.runtime.sendMessage({
                     target: 'offscreen',
                     type: 'startRecording',
                     data: { streamId, tabId: currentMeetingTabId, duration: recordingDurationMs }
                 });
                 chrome.runtime.sendMessage({ action: 'recordingStartedUpdate' });
-                isRecording = true;
-                sendResponse({ status: "participant recording started" });
-            } catch (error) {
-                sendResponse({ status: "error", error: error.message });
-            }
-        });
-        return true;
-    }
+            }, 500); // 500ms delay for offscreen to load
+
+            isRecording = true;
+            sendResponse({ status: "participant recording started" });
+        } catch (error) {
+            console.error("[Background] Failed to start participant recording:", error);
+            sendResponse({ status: "error", error: error.message });
+        }
+    });
+    return true;
+}
+
 
     // 5. Receive tab audio from offscreen
     if (message.action === 'tabAudioRecorded' && message.audioBase64) {

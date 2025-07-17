@@ -207,10 +207,17 @@
 //   }
 // });
 
-
-
 // src/offscreen/recorder.js
 console.log("UnifiedMeetingSummarizer: Offscreen recorder.js loaded.");
+
+
+console.log("[Background] Sending startRecording to offscreen with streamId:", streamId);
+chrome.runtime.sendMessage({
+  target: 'offscreen',
+  type: 'startRecording',
+  data: { streamId, tabId: currentMeetingTabId, duration: recordingDurationMs }
+});
+
 function relayToBackground(...args) {
   try { chrome.runtime.sendMessage({ action: 'offscreenLog', payload: args }); } catch {}
 }
@@ -221,6 +228,7 @@ chrome.runtime.onMessage.addListener(async (msg, sender, respond) => {
 
   if (msg.type === "startRecording") {
     relayToBackground("Offscreen: startRecording received, streamId:", msg.data?.streamId);
+    console.log("Offscreen: got startRecording!", msg.data);
     const { streamId, duration } = msg.data || {};
     if (!streamId) {
       relayToBackground("Offscreen: No streamId received, cannot record.");
