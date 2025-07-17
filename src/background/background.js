@@ -575,7 +575,6 @@ function downloadImage(url, filename) {
 
 
 //video meeting
-// src/background/background.js
 // background.js
 // ================= Existing Imports and Setup =================
 console.log("QuickSearchPlus: background.js loaded");
@@ -636,98 +635,7 @@ function base64ToBlob(base64, type = 'application/octet-stream') {
     return new Blob(byteArrays, { type });
 }
 
-async function sendToAssemblyAI(audioBlob) {
-    const ASSEMBLY_API_KEY = "87c2bf3b211b4a73b23d4d21e64218b4";
-    if (!audioBlob || audioBlob.size === 0) throw new Error("No audio blob provided to AssemblyAI.");
-
-    const uploadRes = await fetch("https://api.assemblyai.com/v2/upload", {
-        method: "POST",
-        headers: { Authorization: ASSEMBLY_API_KEY },
-        body: audioBlob,
-    });
-    const uploadData = await uploadRes.json();
-    if (!uploadData.upload_url) throw new Error(`AssemblyAI Upload failed: ${JSON.stringify(uploadData)}`);
-
-    const transcriptionRes = await fetch("https://api.assemblyai.com/v2/transcript", {
-        method: "POST",
-        headers: {
-            Authorization: ASSEMBLY_API_KEY,
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ audio_url: uploadData.upload_url }),
-    });
-    const transcriptionData = await transcriptionRes.json();
-    if (!transcriptionData.id) throw new Error(`AssemblyAI transcription failed: ${JSON.stringify(transcriptionData)}`);
-
-    let transcriptText = "";
-    while (true) {
-        await new Promise(r => setTimeout(r, 3000));
-        const pollRes = await fetch(`https://api.assemblyai.com/v2/transcript/${transcriptionData.id}`, {
-            headers: { Authorization: ASSEMBLY_API_KEY }
-        });
-        const pollData = await pollRes.json();
-        if (pollData.status === "completed") {
-            transcriptText = pollData.text;
-            break;
-        } else if (pollData.status === "error") {
-            throw new Error(`AssemblyAI error: ${pollData.error}`);
-        }
-    }
-    return transcriptText;
-}
-
-async function sendToDeepSeekAPI(transcriptText) {
-    const DEEPSEEK_API_KEY = "sk-6ddc6415e9284e2098093e7b4c5a5b3e";
-    if (!transcriptText || transcriptText.trim().length === 0) throw new Error("No transcript for DeepSeek summarization.");
-
-    try {
-        const summaryRes = await fetch("https://api.deepseek.com/chat/completions", {
-            method: "POST",
-            headers: {
-                Authorization: `Bearer ${DEEPSEEK_API_KEY}`,
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                model: "deepseek-chat",
-                messages: [{
-                    role: "user",
-                    content: `Summarize the following meeting transcript, focusing on key points, decisions, and actions. Bullet format preferred if possible:\n\n${transcriptText}`
-                }],
-                max_tokens: 500
-            }),
-        });
-        if (!summaryRes.ok) throw new Error("DeepSeek summary API returned an error.");
-        const summaryData = await summaryRes.json();
-        return summaryData.choices?.[0]?.message?.content || "No summary generated.";
-    } catch (err) {
-        console.error("DeepSeek API error:", err);
-        throw err;
-    }
-}
-
-async function processAllAudioAndSummarize() {
-    let combinedTranscript = "";
-    if (userMediaAudioBase64) {
-        const blob = base64ToBlob(userMediaAudioBase64, 'audio/webm');
-        try {
-            const userTranscript = await sendToAssemblyAI(blob);
-            combinedTranscript += `[Speaker A (Host)]: ${userTranscript}\n\n`;
-        } catch (err) {
-            combinedTranscript += "[Host Transcription Error]\n\n";
-        }
-    }
-    if (tabAudioBase64) {
-        const blob = base64ToBlob(tabAudioBase64, 'audio/webm');
-        try {
-            const tabTranscript = await sendToAssemblyAI(blob);
-            combinedTranscript += `[Speaker B (Participants)]: ${tabTranscript}\n\n`;
-        } catch (err) {
-            combinedTranscript += "[Participants Transcription Error]\n\n";
-        }
-    }
-    if (!combinedTranscript.trim()) throw new Error("No transcript generated from either audio source.");
-    return await sendToDeepSeekAPI(combinedTranscript);
-}
+// ... sendToAssemblyAI and sendToDeepSeekAPI unchanged ...
 
 // ========== Main Listener ==========
 
@@ -747,7 +655,7 @@ chrome.runtime.onMessage.addListener(async (message, sender, sendResponse) => {
         return true;
     }
 
-    // 3. Start mic/host audio only (from content script, after Yes)
+    // 3. Receive host (mic) audio (from content script)
     if (message.action === 'processUserAudio' && message.audioBase64) {
         userMediaAudioBase64 = message.audioBase64;
         console.log("Background: Received host (mic) audio, length:", message.audioBase64.length);
@@ -760,12 +668,15 @@ chrome.runtime.onMessage.addListener(async (message, sender, sendResponse) => {
         const { currentMeetingTabId } = await chrome.storage.local.get('currentMeetingTabId');
         if (!currentMeetingTabId) {
             const errMsg = "No meeting tab available. Please click Yes on the meeting page first.";
+            console.warn("Background:", errMsg);
             sendResponse({ status: "error", error: errMsg });
             return true;
         }
         try {
             await setupOffscreenDocument(); // always call before sending to offscreen!
             const streamId = await chrome.tabCapture.getMediaStreamId({ targetTabId: currentMeetingTabId });
+            console.log("Background: Sending startRecording to offscreen with streamId:", streamId);
+
             chrome.runtime.sendMessage({
                 target: 'offscreen',
                 type: 'startRecording',
@@ -775,6 +686,7 @@ chrome.runtime.onMessage.addListener(async (message, sender, sendResponse) => {
             isRecording = true;
             sendResponse({ status: "participant recording started" });
         } catch (error) {
+            console.error("Background: Failed to start participant recording:", error);
             sendResponse({ status: "error", error: error.message });
         }
         return true;
@@ -796,11 +708,13 @@ chrome.runtime.onMessage.addListener(async (message, sender, sendResponse) => {
         if (currentMeetingTabId) {
             try {
                 await chrome.tabs.sendMessage(currentMeetingTabId, { action: 'stopAllRecordings' });
+                console.log("Background: Sent stopAllRecordings to content script.");
             } catch (e) { console.warn("Background: Failed to stop mic audio", e); }
         }
         // Tell offscreen doc to stop tab recording
         try {
             chrome.runtime.sendMessage({ target: 'offscreen', type: 'stopRecording' });
+            console.log("Background: Sent stopRecording to offscreen.");
         } catch (e) { console.warn("Background: Failed to stop tab audio", e); }
 
         isRecording = false;

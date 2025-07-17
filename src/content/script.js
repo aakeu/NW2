@@ -369,8 +369,6 @@ chrome.storage.local.get(['displayType', 'buttonDisabledGlobally'], (res) => {
 
 //video summary
 
-// src/content/script.js
-// ================= Video Summary Content Script =================
 console.log("UnifiedMeetingSummarizer: content script loaded");
 
 let userMediaRecorder = null;

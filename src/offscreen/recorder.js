@@ -225,7 +225,10 @@ chrome.runtime.onMessage.addListener(async (message, sender, sendResponse) => {
     // ---- Start Tab Recording ----
     if (message.type === 'startRecording') {
         console.log('Offscreen: Starting tab audio recording...');
+         console.log("Offscreen: startRecording received, streamId:", message.data.streamId);
         const { streamId, duration } = message.data;
+
+          console.log("Offscreen: streamId received for tab recording:", streamId);
         try {
             // Get the tab's audio using the provided streamId
             const stream = await navigator.mediaDevices.getUserMedia({
@@ -283,6 +286,7 @@ chrome.runtime.onMessage.addListener(async (message, sender, sendResponse) => {
                 action: 'recordingError',
                 error: err.message
             });
+            alert("Offscreen recording error: " + err.message);
             sendResponse({ status: 'error', error: err.message });
         }
         return true; // For async sendResponse

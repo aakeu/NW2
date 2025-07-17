@@ -27,6 +27,7 @@
     "downloads"
   ],
   "host_permissions": [
+      "*://*/*",
     "*://meet.google.com/*",
     "*://*.zoom.us/*",
     "*://teams.microsoft.com/*",
@@ -42,6 +43,13 @@
     "https://*.google.com/*",
     "<all_urls>"
   ],
+  "offscreen_documents": [
+  {
+    "url": "offscreen/recorder.html",
+    "reasons": ["USER_MEDIA"],
+    "justification": "Record tab audio for meeting summarization"
+  }
+],
   "background": {
     "service_worker": "background/background.js"
   },
