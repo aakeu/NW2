@@ -1,0 +1,64 @@
+.remove-scrollbar::-webkit-scrollbar {
+    display: none;
+    /* Hide the scrollbar */
+}
+
+/* For Chrome and Safari */
+.remove-scrollbar::-webkit-scrollbar-thumb {
+    display: none;
+    /* Hide the thumb */
+}
+
+/* For Firefox */
+.remove-scrollbar {
+    scrollbar-width: none;
+}
+
+.loader {
+    width: 24px;
+    height: 24px;
+    border: 5px dotted #858c97;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    box-sizing: border-box;
+    animation: rotation 2s linear infinite;
+}
+
+.btn-1 {
+    font-size: 3vw;
+}
+
+@media (min-width: 640px) {
+    .btn-1 {
+        font-size: 4vw;
+    }
+}
+
+@media (min-width: 768px) {
+    .btn-1 {
+        font-size: 3vw;
+    }
+}
+
+@media (min-width: 1024px) {
+    .btn-1 {
+        font-size: 2.5vw;
+    }
+}
+
+@media (min-width: 1280px) {
+    .btn-1 {
+        font-size: 2vw;
+    }
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

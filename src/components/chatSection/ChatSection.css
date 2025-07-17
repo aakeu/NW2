@@ -1,0 +1,74 @@
+/* ChatSection.css */
+.specialCmdBtnContainer {
+  position: relative;
+  height: 100%;
+}
+
+.specialCmdBtnContainer button {
+  display: flex;
+  gap: 4px;
+  border: none;
+  align-items: center;
+  padding: 4px;
+  border-radius: 8px;
+}
+
+.specialCmdBtnContainer button.darkmode {
+  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+  background-color: #222121;
+  color: white;
+}
+
+.specialCmdBtnContainer button.lightmode {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+.specialCmdBtnContainer button span {
+  font-size: 12px;
+  line-height: 1;
+  text-align: center;
+  display: none;
+}
+
+.specialCmdBtnContainer .options {
+  position: absolute;
+  z-index: 99;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  width: 10rem;
+  left: 0;
+  bottom: 24px;
+  background-color: #034aa6;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.specialCmdBtnContainer .options.hide {
+  display: none;
+}
+
+.specialCmdBtnContainer .options div {
+  padding: 4px;
+  border-radius: 8px;
+}
+
+.specialCmdBtnContainer .options div:hover {
+  background-color: #023b85;
+}
+
+@media (min-width: 768px){
+  .specialCmdBtnContainer button span {
+    display: inline-flex;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .specialCmdBtnContainer .options {
+    left: 8px;
+    bottom: 32px;
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "name": "quicksearch-ext-sider",
+  "version": "1.0.0",
+  "main": "background.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode production",
+    "dev": "webpack --mode development --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aakeu/ExtensionSide.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/aakeu/ExtensionSide/issues"
+  },
+  "homepage": "https://github.com/aakeu/ExtensionSide#readme",
+  "description": "",
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.6.0",
+    "@tailwindcss/postcss": "^4.0.15",
+    "axios": "^1.8.1",
+    "crypto-js": "^4.2.0",
+    "date-fns": "^4.1.0",
+    "dompurify": "^3.2.4",
+    "highlight.js": "^11.11.1",
+    "lodash": "^4.17.21",
+    "marked": "^15.0.7",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-player": "^2.16.0",
+    "react-redux": "^9.2.0",
+    "react-toastify": "^11.0.5",
+    "reselect": "^5.1.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.26.9",
+    "@babel/preset-env": "^7.26.9",
+    "@babel/preset-react": "^7.26.3",
+    "@fortawesome/fontawesome-free": "^6.7.2",
+    "@types/chrome": "^0.0.307",
+    "@types/crypto-js": "^4.2.2",
+    "@types/lodash": "^4.17.16",
+    "@types/node": "^22.13.8",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "@types/turndown": "^5.0.5",
+    "@typescript-eslint/eslint-plugin": "^8.25.0",
+    "@typescript-eslint/parser": "^8.25.0",
+    "babel-loader": "^10.0.0",
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^13.0.0",
+    "css-loader": "^7.1.2",
+    "dotenv-webpack": "^8.1.0",
+    "file-loader": "^6.2.0",
+    "formik": "^2.4.6",
+    "html-webpack-plugin": "^5.6.3",
+    "react-icons": "^5.4.0",
+    "style-loader": "^4.0.0",
+    "ts-loader": "^9.5.2",
+    "turndown": "^7.2.0",
+    "typescript": "^5.7.3",
+    "webpack": "^5.98.0",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.0",
+    "yup": "^1.6.1"
+  }
+}

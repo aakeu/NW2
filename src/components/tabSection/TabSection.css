@@ -1,0 +1,244 @@
+.tabSection {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding-bottom: 20px;
+  overflow-y: scroll;
+  scrollbar-width: none; 
+  -ms-overflow-style: none; 
+}
+
+.tabSection::-webkit-scrollbar {
+  display: none;
+}
+
+.tabSectionContainer {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  gap: 10px;
+  padding: 20px;
+  animation: tabsSection 0.6s ease-in-out;
+  @media (min-width: 840px) {
+    grid-template-columns: 1fr 7fr;
+  }
+  @media (max-width: 406px) {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 20px 20px 40px;
+  }
+}
+.tabSectionScreenshot {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  @media (max-width: 406px) {
+    margin-bottom: 20px;
+  }
+}
+.tabSectionHeader, .tabSectionHeaderDark {
+  font-family: Poppins;
+  display: flex;
+  font-size: 12px;
+  font-weight: 600;
+}
+.tabSectionHeader {
+  color: #202020;
+}
+.tabSectionHeaderDark {
+  color: white;
+}
+.tabSectionHeaderTab, 
+.tabSectionFolderCollectionHeader {
+  font-family: Poppins;
+  font-size: 12px;
+  color: #034AA6;
+  font-weight: 600;
+  margin-left: 4px;
+}
+.tabSectionScreenshot {
+  width: 100px;
+  height: 100px;
+  border-radius: 6px;
+}
+.tabSectionContents {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+.tabSectionContentsHeader, 
+.tabSectionContentsDescHeader {
+  font-family: Poppins;
+  font-size: 11px;
+  color: #034AA6;
+  font-weight: 600;
+}
+.tabSectionContentsDesc, .tabSectionContentsDescDark {
+  font-family: Poppins;
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: -10px;
+}
+.tabSectionContentsDesc {
+  color: #202020;
+}
+.tabSectionContentsDescDark {
+  color: white;
+}
+.tabSectionTextarea, .tabSectionTextareaDark {
+  display: flex;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  overflow-y: auto;
+  width: 90%;
+  margin-top: 7px;
+  outline: none;
+  resize: none;
+  @media (min-width: 480px) {
+    width: 96%;
+  }
+  @media (min-width: 766px) {
+    width: 98%;
+  }
+}
+.tabSectionTextarea {
+  background-color: #EEF1F9;
+}
+.tabSectionTextareaDark {
+  background-color: rgb(34, 33, 33);
+  color: white;
+}
+.tabSectionTextarea:focus, .tabSectionTextareaDark:focus {
+  outline: none;
+}
+.tabSectionTextarea::placeholder {
+  font-size: 11px;
+  color: #202020;
+}
+.tabSectionTextareaDark::placeholder {
+  font-size: 11px;
+  color: white;
+}
+.tabSectionFolder {
+ display: grid;
+ grid-template-columns: 10fr 1fr;
+ margin-top: 10px;
+}
+.tabSectionFolderCollection {
+  display: flex;
+  flex-direction: column;
+}
+.tabSectionFolderIcon {
+  width: 25px;
+  height: 25px;
+  display: flex;
+  margin-left: 70px;
+  cursor: pointer;
+}
+.tabSectionFolderCollectionHeader {
+  display: flex;
+  position: relative;
+}
+.tabSectionReusableHolder {
+  display: block;
+  position: absolute;
+  margin-top: 30px;
+}
+.tabSectionTag, .tabSectionUrl {
+  font-family: Poppins;
+  font-size: 12px;
+  color: #034AA6;
+  font-weight: 600;
+}
+.tabSectionTag {
+  margin-top: 50px;
+}
+.tabSectionTagInput, .tabSectionUrlInput {
+  padding: 10px;
+  border-radius: 6px;
+  background-color: #EEF1F9;
+  border: none;
+  margin-top: 5px;
+}
+.tabSectionTagInputDark, .tabSectionUrlInputDark {
+  padding: 10px;
+  border-radius: 6px;
+  background-color: rgb(34, 33, 33);
+  color: white;
+  border: none;
+  margin-top: 5px;
+}
+.tabSectionTagInput:focus, .tabSectionUrlInput:focus,
+.tabSectionTagInputDark:focus, .tabSectionUrlInputDark:focus {
+  outline: none;
+}
+.tabSectionBtnHolder {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 30px;
+}
+.tabSectionBtnSaveAllTabs, .tabSectionBtnSaveAllTabsDark {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  box-shadow: rgba(99, 99, 99, 0.1) 0px 2px 8px 0px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  border-radius: 6px;
+  padding: 5px;
+  font-family: Poppins;
+  font-size: 10px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+.tabSectionBtnSaveAllTabs {
+  background-color: white;
+  color: #034aa6;
+}
+.tabSectionBtnSaveAllTabsDark {
+  color: white;  
+  background-color: rgb(34, 33, 33);
+}
+.tabSectionBtnSaveTab {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, #00ccff 0%, #034aa6 100%);
+  transition: transform 0.3s ease;
+  gap: 5px;
+  color: white;
+  font-size: 12px;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  padding: 6px;
+  cursor: pointer;
+}
+.tabSectionBtnSaveTabExtra {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #c7d4e7, #8eb3ea);
+  transition: transform 0.3s ease, background-color 0.3s, box-shadow 0.3s;
+  gap: 5px;
+  color: white;
+  font-size: 12px;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  padding: 6px;
+  font-weight: 500;
+  cursor: not-allowed;
+}
+@keyframes tabsSection {
+  0% {
+    transform: translateX(-50%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

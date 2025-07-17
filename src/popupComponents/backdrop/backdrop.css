@@ -1,0 +1,11 @@
+.backdrop {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #130C3B40;
+  transition: 1s ease-in-out;
+  z-index: 9999;
+}

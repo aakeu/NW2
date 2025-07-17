@@ -1,0 +1,185 @@
+.homeSection {
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+}
+.homeWelcome {
+  display: flex;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  margin-left: 70px;
+  margin-top: -10px;
+}
+.homeWelcomeSecName {
+  display: flex;
+  font-size: 14px;
+  font-weight: 60px;
+  color: rgb(58,114,185);
+}
+.homeSectionSearchHolder {
+  display: flex;
+  gap: 6px;
+  position: relative;
+  margin: 10px auto 30px auto;
+  width: 75%;
+  background-color: #ffffff;
+  box-shadow: rgba(99, 99, 99, 0.1) 0px 2px 8px 0px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  height: 36px;
+  border-radius: 6px;
+  padding: 5px;
+  outline: 1px solid #DEE2E6;
+}
+.googleAndScholarIconHolder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+.googleAndScholarIcon {
+  width: 34px;
+  height: 34px;
+}
+.homeSectionInput {
+  display: flex;
+  border: none;
+  width: 73%;
+  font-size: 14px;
+}
+.homeSectionInput:focus {
+  outline: none;
+  border: none;
+}
+.homeSectionInput::placeholder {
+  font-size: 12px;
+}
+.searchBtnHolder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background: rgb(3,74,166); */
+  background: linear-gradient(180deg, #00CCFF 0%, #034AA6 100%);
+  transition: transform 0.3s ease, box-shadow 0.3s;
+  gap: 5px;
+  margin-left: auto;
+  color: white;
+  font-size: 12px;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  padding: 0px 8px;
+  cursor: pointer;
+}
+.searchSendIcon {
+  width: 12px;
+  height: 12px;
+}
+
+.searchEngineOption {
+  display: block;
+  position: absolute;
+  margin-top: 50px;
+  margin-left: -4px;
+  z-index: 1000;
+  width: 190px;
+  background-color: #ffffff;
+  padding: 9px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  border-radius: 6px;
+  animation: engineSlideIn 0.6s ease-in-out;
+}
+
+.searchEngineOption::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 9px;
+  border-width: 0 10px 10px 10px;
+  border-style: solid;
+  border-color: transparent transparent white transparent;
+  z-index: 1000;
+}
+
+@keyframes engineSlideIn {
+  0% {
+    transform: translateY(30%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.searchEngineOptionContents {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.googleOptionHolder,
+.googleScholarOptionHolder {
+  display: flex;
+  gap: 10px;
+  padding: 6px;
+  cursor: pointer;
+}
+.googleOptionHolder:hover,
+.googleScholarOptionHolder:hover {
+  background-color: #eef1f9;
+  border-radius: 6px;
+  transition: background-color 0.3s;
+}
+.googleText,
+.googleScholarText {
+  font-size: 12px;
+  color: #000000;
+  font-weight: 500;
+  margin-top: 3px;
+}
+
+.googleOptionHolderIcon,
+.googleScholarOptionHolderIcon {
+  width: 20px;
+  height: 20px;
+}
+
+
+.searchingResults,
+.searchResultsAppearHere {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 70px auto;
+  font-size: 14px;
+  font-style: italic;
+}
+.searchResultsTotal {
+  margin-top: 50px;
+}
+
+.homeBookmarkLocation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  font-weight: 600;
+  font-size: 14px;
+  margin-left: auto;
+}
+.homeBookmarkLocationText {
+  display: flex;
+  font-size: 14px;
+  font-weight: 60px;
+  color: rgb(58,114,185);
+}
+.folderIcon {
+  display: flex;
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  margin-top: -10px;
+  cursor: pointer;
+}

@@ -1,0 +1,1294 @@
+.chatGptContainer,
+.chatGptContainerExtra {
+  display: grid;
+  gap: 10px;
+  padding: 10px 0px 10px 10px;
+  animation: chatGptSectionSlideIn 0.6s ease-in-out;
+}
+.chatGptContainer {
+  grid-template-columns: 1fr 4fr;
+  /* transition: grid-template-columns 0.6s ease-in-out; */
+}
+.chatGptContainerExtra {
+  grid-template-columns: 1fr 11fr;
+  /* transition: grid-template-columns 0.6s ease-in-out; */
+}
+.chatGptSidebar,
+.chatGptMain {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  box-shadow: rgba(99, 99, 99, 0.1) 0px 2px 8px 0px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  border-radius: 6px;
+}
+.chatGptMain {
+  height: 410px;
+  max-height: 410px;
+  overflow-y: auto;
+  position: relative;
+}
+.chatGptSidebar {
+  padding: 10px 6px;
+  height: 410px;
+  max-height: 410px;
+  overflow-y: scroll;
+  position: relative;
+  overflow-x: hidden;
+}
+.chatGptMain {
+  padding: 10px;
+}
+.chatGptMainHeaderHolder,
+.chatGptMainHeaderHolderExtra {
+  display: block;
+  position: fixed;
+  background-color: #ffffff;
+  transition: background-color 0.6s ease-in-out;
+  padding: 7px;
+  margin-top: -10px;
+  margin-left: -6px;
+  z-index: 9000;
+}
+.chatGptMainHeaderHolder {
+  width: 507px;
+  /* transition: width 0.6s ease-in-out; */
+}
+.chatGptMainHeaderHolderExtra {
+  width: 584px;
+  transition: width 0.6s ease-in-out;
+}
+.chatGptMainHeader {
+  display: flex;
+  gap: 10px;
+}
+.chatGptHamburgerIcon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+.chatGptTextAreaBtnActionAttachmentHolder {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: black;
+  cursor: pointer;
+}
+.chatGptTextAreaDataImg,
+.chatGptTextAreaBtnActionAttachment,
+.chatGptBtnSendImgIcon {
+  width: 13px;
+  height: 13px;
+  cursor: pointer;
+}
+.chatGptTextAreaBtnActionAttachment {
+  margin-top: 3px;
+}
+.chatGptProfileIcon {
+  width: 20px;
+  height: 20px;
+}
+.chatGptHeaderTextHolder {
+  display: flex;
+  flex-direction: column;
+}
+.chatGptHeaderCaption,
+.chatGptHeaderCaptionDesc {
+  display: flex;
+  font-family: Poppins;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #202020;
+}
+.chatGptHeaderCaption {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+}
+.chatGptHeaderCaptionDesc {
+  color: #a5a5a5;
+  font-size: 12px;
+}
+.chatGptMainContents {
+  display: flex;
+  flex-direction: column;
+  margin-top: 55px;
+}
+.chatGptMinContentsPredefined {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  transition: grid-template-columns 0.6s ease-in-out;
+  gap: 20px;
+  animation: gptPredefinedSlideIn 0.6s ease-in-out;
+}
+.chatGptMainContentPredefinedDetails,
+.chatGptMainContentPredefinedDetailsExtra {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0px 5px 5px 5px;
+  padding: 9px;
+  box-shadow: rgba(99, 99, 99, 0.1) 0px 2px 2px 0px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+.chatGptMainContentPredefinedDetails {
+  background-color: #f5f5f5;
+}
+.chatGptMainContentPredefinedDetailsExtra {
+  background-color: #034aa6;
+  transition: background-color 0.6s ease-in-out;
+  color: white;
+}
+.chatGptMainContentPredefinedHeader,
+.chatGptMainContentPredefinedContent {
+  display: flex;
+  font-family: Poppins;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+.chatGptMainContentPredefinedHeader {
+  font-weight: 600;
+  font-size: 13px;
+  color: #202020;
+  transition: color 0.6s ease-in-out;
+}
+.chatGptMainContentPredefinedHeaderExtra,
+.chatGptMainContentPredefinedContentExtra {
+  color: white;
+  text-align: center;
+  transition: color 0.6s ease-in-out;
+}
+.chatGptMainContentPredefinedHeaderExtra {
+  font-weight: 600;
+}
+.chatGptMainContentPredefinedContent {
+  font-size: 12px;
+  text-align: center;
+  color: #202020;
+  transition: color 0.6s ease-in-out;
+}
+.chatGptTextAreaContainer,
+.chatGptTextAreaContainerExtra {
+  display: block;
+  position: fixed;
+  background-color: #ffffff;
+  transition: background-color 0.6s ease-in-out;
+  padding: 7px;
+  margin-top: 314px;
+  margin-left: -6px;
+}
+.chatGptTextAreaContainer {
+  width: 507px;
+  /* transition: width 0.9s ease-in-out; */
+}
+.chatGptTextAreaContainerExtra {
+  width: 586px;
+  transition: width 0.6s ease-in-out;
+}
+.chatGptTextAreaContentsHolder,
+.chatGptTextAreaContentsHolderExtra {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 5px 3px 0px 5px;
+  transition: 0.6s ease-in-out;
+}
+.chatGptTextArea {
+  display: flex;
+  width: 97%;
+  border-radius: 7px;
+  border: 1px solid #034aa6;
+  padding: 6px;
+}
+.chatGptTextAreaActionHolder {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+.chatGptPrepContainer {
+  display: flex;
+  gap: 5px;
+}
+.chatGptPrepCreateImageHolder,
+.chatGptPrepSummarizeTextHolder {
+  display: flex;
+  gap: 5px;
+  color: #231f20;
+  font-size: 10px;
+  border-radius: 7px;
+  padding: 6px;
+  background-color: #ffffff;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+.chatGptPrepCreateImageHolder:hover,
+.chatGptPrepSummarizeTextHolder:hover {
+  background-color: #f3efef;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+.chatGptPrepCreateImg,
+.chatGptPrepSummarizeTxtImg {
+  width: 12px;
+  height: 12px;
+}
+.chatGptTextAreaDataAction,
+.chatGptTextAreaBtnActionHolder {
+  display: flex;
+  gap: 10px;
+}
+.chatGptTextAreaDataAction {
+  margin-top: 7px;
+}
+.chatGptBtnSend {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #034aa6;
+  transition: transform 0.3s ease;
+  gap: 10px;
+  color: white;
+  font-size: 12px;
+  font-family: Poppins;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  padding: 8px;
+  cursor: pointer;
+  width: 125px;
+}
+.chatGptBtnSendExtra {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #d1d5db, #d1d5db);
+  box-shadow: 0px 4px 8px 0px #034aa61f;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease, background-color 0.3s, box-shadow 0.3s;
+  gap: 5px;
+  width: 125px;
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  padding: 8px;
+}
+.chatGptSidebarNewChatBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, #00ccff 0%, #034aa6 100%);
+  transition: transform 0.6s ease;
+  gap: 5px;
+  color: white;
+  font-size: 12px;
+  font-family: Poppins;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  padding: 8px;
+  cursor: pointer;
+}
+.chatGptSidebarNewChatText {
+  transition: transform 0.6s ease;
+  font-size: 12px;
+}
+.chatGptSidebarNewChatIcon {
+  width: 14px;
+  height: 14px;
+}
+.chatGptSidebarHistoryCaption {
+  display: flex;
+  gap: 6px;
+  margin-top: 20px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.chatGptSidebarHistoryCaptionImg {
+  width: 15px;
+  height: 15px;
+}
+.chatGptSidebarHistoryCaptionImgExtra {
+  width: 12px;
+  height: 12px;
+}
+.chatGptSidebarHistoryText,
+.chatGptSidebarHistoryDetail,
+.chatGptSidebarHistoryContentDate {
+  font-family: Poppins;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+.chatGptSidebarHistoryText,
+.chatGptSidebarHistoryContentDate {
+  font-weight: 600;
+  font-size: 12px;
+  color: #231f20;
+}
+.chatGptSidebarHistoryDetail {
+  color: #034aa6;
+  font-size: 10px;
+}
+.chatGptSidebarHistoryContentHolder,
+.chatGptSidebarHistoryContentHolderExtra {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  padding: 7px;
+  border-radius: 7px;
+  transition: background-color 0.6s ease-in-out;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.chatGptFullText {
+  display: block;
+  position: absolute;
+  top: 30px;
+  left: 0;
+  width: 90px;
+  max-width: 90px;
+  max-height: 300px;
+  overflow-y: auto;
+  padding: 5px;
+  font-size: 11px;
+  background-color: gainsboro;
+  border-radius: 5px;
+  z-index: 9999;
+}
+.chatGptSidebarHistoryContentHolder {
+  background-color: transparent;
+}
+.chatGptSidebarHistoryContentHolderExtra:hover {
+  background-color: #e7eefa;
+}
+.chatGptSidebarHistoryContentDetails {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.chatGptSidebarHistoryDetailImg {
+  position: relative;
+  pointer-events: auto;
+  z-index: 10;
+}
+
+.gptTooltip {
+  display: block;
+  position: absolute;
+  top: -40px;
+  left: 70%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.6s ease-in-out, visibility 0.6s ease-in-out;
+}
+.gptTooltip::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 10px;
+  height: 10px;
+  background-color: #333;
+}
+.chatGptSidebarHistoryDetailImg:hover + .gptTooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+.attachFileInfo {
+  display: block;
+  position: absolute;
+  margin-top: -100px;
+  width: 200px;
+  background: linear-gradient(180deg, #034aa6 0%, #034aa6 100%);
+  color: white;
+  padding: 7px 3px 7px 10px;
+  border-radius: 6px;
+  margin-right: 60px;
+  transition: opacity 0.6s ease-in-out, visibility 0.6s ease-in-out;
+  z-index: 9999;
+}
+.attachFileInfo::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 10%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 10px;
+  height: 10px;
+  background-color: #034aa6;
+}
+
+.reusableGptOptionModal {
+  display: block;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #e7eefa;
+  box-shadow: rgba(99, 99, 99, 0.1) 0px 2px 8px 0px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  color: black;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  white-space: nowrap;
+  opacity: 1;
+  visibility: visible;
+  z-index: 9999;
+  transition: opacity 0.6s ease-in-out, visibility 0.6s ease-in-out;
+}
+.reusableGptOptionModalContents {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.reusableGptOptionModalDetails {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 7px;
+}
+.reusableGptOptionModalDetails:hover {
+  background-color: #f5f5f5;
+  border-radius: 5px;
+}
+.reusableGptOptionModalDetailsImg {
+  width: 15px;
+  height: 15px;
+}
+.gptQuestionAnswer {
+  display: flex;
+  flex-direction: column;
+  animation: gptQuestionAnswerSlideIn 0.6s ease-in-out;
+  margin-bottom: 110px;
+}
+.gptQuestionAnswerContainer {
+  display: flex;
+  flex-direction: column;
+}
+.gptQuestionHolder,
+.gptImmediateResponseQuestionHolder {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+.gptQuestion,
+.gptImmediateResponseQuestion {
+  display: flex;
+  padding: 12px 12px 20px 12px;
+  border-radius: 7px 7px 0px 7px;
+  background-color: #034aa6;
+  color: white;
+  width: 320px;
+  max-width: 320px;
+  font-size: 11px;
+  text-align: justify;
+  position: relative;
+}
+.gptQuestionUserHolder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 23px;
+  height: 23px;
+  border-radius: 5px;
+  background-color: #e7eefa;
+  color: #0a58d0;
+  position: relative;
+}
+.gptQuestionUserImg {
+  width: 23px;
+  height: 23px;
+}
+.gptUserOnline,
+.gptAnswerUserOnline {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-radius: 50%;
+  background-color: #54d969;
+  font-weight: 600;
+}
+.gptUserOnline {
+  width: 5px;
+  height: 5px;
+}
+.gptAnswerUserOnline {
+  width: 12px;
+  height: 12px;
+}
+.gptAnswerHolder,
+.gptImmediateAnswerHolder {
+  display: flex;
+  gap: 20px;
+  margin-top: 30px;
+  width: 94%;
+  margin-bottom: 30px;
+}
+.gptAnswer,
+.gptImmediateAnswer {
+  display: flex;
+  padding: 12px 12px 20px 12px;
+  background-color: #f5f5f5;
+  color: black;
+  border-radius: 0px 7px 7px 7px;
+  text-align: justify;
+  position: relative;
+}
+.gptImmediateAnswerContent {
+  display: flex;
+  flex-direction: column;
+  padding: 12px 12px 20px 12px;
+  background-color: #f5f5f5;
+  color: black;
+  border-radius: 0px 7px 7px 7px;
+  text-align: justify;
+  position: relative;
+}
+
+.gptImmediateAnswerContent h1,
+.gptAnswer h1,
+.gptImmediateAnswerContent h2,
+.gptAnswer h2,
+.gptImmediateAnswerContent h3,
+.gptAnswer h3,
+.gptTranslateSectionResult h1,
+.gptTranslateSectionResult h2,
+.gptTranslateSectionResult h3,
+.gptOCRResultHolder h1,
+.gptOCRResultHolder h2,
+.gptOCRResultHolder h3 {
+  margin: 4px;
+}
+
+.gptImmediateAnswerContent p,
+.gptAnswer p,
+.gptTranslateSectionResult p,
+.gptOCRResultHolder p {
+  margin: 0.5em 0;
+}
+
+.gptImmediateAnswerContent ul,
+.gptAnswer ul,
+.gptTranslateSectionResult ul,
+.gptOCRResultHolder ul {
+  margin: 0.5em 0;
+  padding-left: 1.5em;
+}
+
+.gptImmediateAnswerContent li,
+.gptAnswer li,
+.gptTranslateSectionResult li,
+.gptOCRResultHolder li {
+  margin-bottom: 0.3em;
+}
+.gptTranslateSectionResult,
+.gptOCRResultHolder {
+  position: relative;
+}
+
+.gptImmediateAnswerContent pre,
+.gptAnswer pre {
+  display: flex;
+  text-align: left;
+  background-color: black;
+  color: white;
+  max-width: 100%;
+  overflow-x: auto;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-family: monospace;
+  white-space: pre-wrap;
+  font-size: 12px;
+  margin-left: -12px;
+}
+
+.gptImmediateAnswerContent img {
+  width: 256px;
+  height: 256px;
+  margin-bottom: 10px;
+}
+
+.gptAnswerActionHolder,
+.gptImmediateAnswerActionHolder {
+  display: block;
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+}
+.gptAnswerActionContents,
+.gptImmediateAnswerActionContents {
+  display: flex;
+  gap: 10px;
+  position: relative;
+}
+.gptCopiedDiv,
+.gptTranslationCopiedDiv {
+  display: block;
+  position: absolute;
+  top: -45px;
+  left: 0;
+  background-color: rgb(17, 98, 17);
+  box-shadow: rgba(99, 99, 99, 0.1) 0px 2px 8px 0px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  padding: 6px;
+  border-radius: 5px;
+  text-align: center;
+  color: white;
+  width: 130px;
+}
+.gptActionIcon {
+  cursor: pointer;
+}
+.gptQuestionEditIconHolder {
+  display: block;
+  position: absolute;
+  top: -5px;
+  left: -42px;
+  cursor: pointer;
+  padding: 8px;
+}
+.gptQuestionEditIconHolder:hover {
+  padding: 8px;
+  background-color: #e7eefa;
+  transition: background-color 0.6s ease-in-out;
+  border-radius: 50%;
+}
+
+.gptQuestionEditTooltip {
+  display: block;
+  position: absolute;
+  top: 40px;
+  left: -10%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.6s ease-in-out, visibility 0.6s ease-in-out;
+}
+.gptQuestionEditTooltip::after {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 10px;
+  height: 10px;
+  background-color: #333;
+}
+.gptQuestionEditIconHolder:hover + .gptQuestionEditTooltip {
+  opacity: 1;
+  visibility: visible;
+}
+.gptQuestionEditAreaHolder {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.gptQuestionEditDataTextarea {
+  display: flex;
+  padding: 12px 12px 45px 12px;
+  border-radius: 7px;
+  font-family: Poppins;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  font-size: 12px;
+  width: 390px;
+  max-width: 390px;
+  font-size: 11px;
+  text-align: justify;
+  position: relative;
+  border: none;
+  background-color: #e7eefa;
+}
+.gptQuestionEditDataTextarea:focus {
+  outline: none;
+}
+.gptQuestionEditDataActionHolder {
+  display: block;
+  position: absolute;
+  bottom: 5px;
+  right: 0;
+}
+.gptQuestionEditDataActionContent {
+  display: flex;
+  gap: 10px;
+}
+.gptQuestionEditDataCancelBtn {
+  display: flex;
+  padding: 10px;
+  border: none;
+  border-radius: 9px;
+  font-size: 12px;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  transition: background-color 0.6s ease-in-out;
+  cursor: pointer;
+}
+.gptQuestionEditDataSendBtn {
+  display: flex;
+  padding: 10px;
+  border: none;
+  border-radius: 9px;
+  font-size: 12px;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  transition: background-color 0.6s ease-in-out;
+  color: white;
+  cursor: pointer;
+}
+.gptQuestionEditDataSendBtnExtra {
+  display: flex;
+  padding: 10px;
+  border: none;
+  border-radius: 9px;
+  font-size: 12px;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #d1d5db, #d1d5db);
+  box-shadow: 0px 4px 8px 0px #034aa61f;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease, background-color 0.3s, box-shadow 0.3s;
+  color: white;
+}
+
+.gptQuestionEditDataTextareaError {
+  display: block;
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  color: red;
+  font-size: 12px;
+}
+.gptImmediateResponse {
+  display: flex;
+  flex-direction: column;
+}
+.gptResponseForm {
+  margin-right: 30px;
+}
+
+.chatGptTextAreaBtnActionAttachmentContainer {
+  display: flex;
+  gap: 10px;
+  background-color: #afc4c9;
+  border-radius: 5px;
+  padding: 0 5px;
+}
+.chatGptTextAreaBtnActionAttachmentClose {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  padding: 4px;
+  height: 6px;
+  margin-top: 3px;
+}
+.chatGptUploadImgPreview {
+  width: 40px;
+  height: 20px;
+  margin-top: 5px;
+}
+.gptSummarizeOptions {
+  display: block;
+  position: absolute;
+  top: -214px;
+  height: 160px;
+  max-height: 160px;
+  overflow-y: auto;
+  background: skyblue;
+  box-shadow: 0px 4px 8px 0px #034aa61f;
+  transition: transform 0.3s ease, background-color 0.3s, box-shadow 0.3s;
+  color: white;
+  border-radius: 5px;
+  margin-left: 20px;
+}
+.gptSummarizeOptionsContents,
+.gptOpenCreateImageContents {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+}
+.gptSummarizeText {
+  font-size: 11px;
+  color: black;
+  cursor: pointer;
+  padding: 5px;
+}
+.gptSummarizeText:hover {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 4px;
+  transition: transform 0.3s ease, background-color 0.3s, box-shadow 0.3s;
+}
+.gptOpenCreateImage {
+  display: block;
+  position: absolute;
+  top: -214px;
+  height: 160px;
+  max-height: 160px;
+  overflow-y: auto;
+  background: skyblue;
+  box-shadow: 0px 4px 8px 0px #034aa61f;
+  transition: transform 0.3s ease, background-color 0.3s, box-shadow 0.3s;
+  border-radius: 5px;
+  margin-left: 2px;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  color: black;
+}
+
+.chatGptMoreFeatures {
+  display: flex;
+  position: relative;
+  margin-left: auto;
+  margin-top: -30px;
+  background-color: #034aa6;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  width: fit-content;
+  box-shadow: 0px 4px 8px 0px #034aa61f;
+  transition: transform 0.3s ease, background-color 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.gptMoreFeaturesModal {
+  display: block;
+  position: absolute;
+  top: 48px;
+  right: 5px;
+  background: skyblue;
+  box-shadow: 0px 4px 8px 0px #034aa61f;
+  transition: transform 0.3s ease, background-color 0.3s, box-shadow 0.3s;
+  padding: 10px;
+  border-radius: 6px;
+  width: 125px;
+  z-index: 9999;
+}
+.gptMoreFeaturesContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: start;
+}
+.gptTranslateCaptionHolder,
+.gptOCRCaptionHolder {
+  display: flex;
+  gap: 10px;
+  color: black;
+  padding: 5px;
+  cursor: pointer;
+}
+.gptOCRCaptionHolder:hover,
+.gptTranslateCaptionHolder:hover {
+  background-color: white;
+  transition: transform 0.3s ease, background-color 0.3s, box-shadow 0.3s;
+  border-radius: 6px;
+}
+.gptTranslateSectionContainer,
+.gptOCRSectionContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 380px;
+  padding: 20px;
+  background-color: white;
+  transition: transform 0.3s ease, background-color 0.3s, box-shadow 0.3s;
+  box-shadow: 0px 4px 8px 0px #034aa61f;
+  border-radius: 10px;
+  animation: gptTranslationSlideIn 0.6s ease-in-out;
+}
+.gptTranslationSectionHeader,
+.gptOCRSectionHeader {
+  display: flex;
+  justify-content: space-between;
+}
+.gptTranslationCaption,
+.gptOCRCaption {
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: -10px;
+}
+.gptMoreFeaturesExtra {
+  margin-top: -45px;
+}
+.gptTranslateSectionContents {
+  display: flex;
+  flex-direction: column;
+  width: 97%;
+  border-radius: 8px;
+  height: 180px;
+  max-height: 180px;
+  background-color: transparent;
+  transition: transform 0.3s ease, background-color 0.3s, box-shadow 0.3s;
+  border: 1px solid rgb(219, 216, 216);
+  border-radius: 12px;
+}
+.gptTranslateSectionContentHeader {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  border-radius: 12px 12px 0px 0px;
+  height: 20px;
+  background-color: #eef1f9;
+  padding: 7px;
+}
+.gptTranslationSourceHolder,
+.gptTranslationTargetHolder {
+  font-size: 13px;
+  font-weight: 600;
+}
+.gptTranslationSwitchIcon {
+  cursor: pointer;
+  width: 22px;
+  height: 18px;
+  margin-left: 75px;
+}
+.gptTranslationDisabledSwitchIcon {
+  width: 22px;
+  height: 18px;
+  margin-left: 75px;
+  cursor: not-allowed;
+}
+.gptTranslationTextarea {
+  padding: 10px;
+  height: 160px;
+  border: none;
+  padding-bottom: 20px;
+}
+.gptTranslationTextarea:focus {
+  outline: none;
+}
+.gptTranslateBtn {
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  margin-top: -14px;
+  background: linear-gradient(180deg, #00ccff 0%, #034aa6 100%);
+  transition: transform 0.3s ease;
+  gap: 5px;
+  color: white;
+  font-size: 12px;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  padding: 11px;
+  cursor: pointer;
+}
+.gptTranslateBtnExtra {
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  margin-top: -14px;
+  background: linear-gradient(to right, #d1d5db, #d1d5db);
+  box-shadow: 0px 4px 8px 0px #034aa61f;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease, background-color 0.3s, box-shadow 0.3s;
+  gap: 5px;
+  color: white;
+  font-size: 12px;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  padding: 11px;
+  cursor: not-allowed;
+}
+.gptTranslateSectionResult,
+.gptOCRResultHolder {
+  display: flex;
+  width: 94%;
+  padding: 6px;
+  height: 150px;
+  max-height: 150px;
+  margin-top: 20px;
+  overflow-y: auto;
+  margin-bottom: 30px;
+}
+.gptTranslateSectionSourceContainer,
+.gptTranslationTargetContainer {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+.gptTranslationArrow {
+  width: 18px;
+  height: 18px;
+}
+.gptTranslationLanguageContents {
+  display: block;
+  position: absolute;
+  top: 30px;
+  left: -5px;
+  background-color: #eef1f9;
+  transition: transform 0.3s ease, background-color 0.3s, box-shadow 0.3s;
+  box-shadow: 0px 4px 8px 0px #034aa61f;
+  width: 200px;
+  max-width: 200px;
+  height: 210px;
+  max-height: 210px;
+  overflow-y: scroll;
+  border-radius: 7px;
+  padding: 10px;
+  z-index: 9999;
+  animation: gptTranslationLanguageSlideIn 0.6s ease-in-out;
+}
+.gptTranslationLanguageContentsHolder {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.gptTranslationLanguageSearchContainer {
+  display: flex;
+  gap: 3px;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgb(204, 188, 188);
+  border-radius: 7px;
+  padding: 4px;
+}
+.gptSearchSendIcon {
+  width: 16px;
+  height: 17px;
+  margin-left: 3px;
+}
+.gptTranslationLanguageSearchInput {
+  border: none;
+  padding: 7px;
+  font-size: 12px;
+  background-color: #eef1f9;
+}
+.gptTranslationLanguageSearchInput::placeholder {
+  font-size: 11px;
+}
+.gptTranslationLanguageSearchInput:focus {
+  outline: none;
+}
+.gptTranslationLanguageTextHolder {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  background-color: #eef1f9;
+  border-radius: 7px;
+}
+.gptTranslationLanguageTextHolder:hover {
+  background-color: white;
+  border-radius: 7px;
+  transition: transform 0.3s ease, background-color 0.3s;
+}
+.gptTranslationLanguageText {
+  font-size: 14px;
+  color: black;
+}
+.gptTranslationLanguageError {
+  display: flex;
+  font-size: 12px;
+  color: red;
+  font-style: italic;
+  margin-top: 10px;
+}
+.gptTranslationError,
+.gptOCRError {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: red;
+  font-size: 12px;
+}
+.gptTranslateCopyAudioContainer {
+  display: flex;
+  position: relative;
+  gap: 10px;
+}
+.gptTranslateAudioError {
+  color: red;
+  font-size: 10px;
+}
+.gptTranslateAudio {
+  width: 100%;
+  outline: none;
+}
+.gptOCRFileContents,
+.gptOCRFileContentsPreview {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2px 120px 2px auto;
+  width: 70%;
+  height: 200px;
+  background-color: #eef1f9;
+  transition: transform 0.3s ease, background-color 0.3s, box-shadow 0.3s;
+  box-shadow: 0px 4px 8px 0px #034aa61f;
+  border: 1px solid black;
+  border-radius: 7px;
+  cursor: pointer;
+  animation: gptOCRFileContentsLanguageSlideIn 0.6s ease-in-out;
+}
+.gptOCRFileContentsPreview {
+  position: relative;
+  height: 170px;
+  margin-top: -30px;
+}
+.gptOCRFileContentsInfo {
+  display: flex;
+  font-size: 12px;
+  color: black;
+  text-align: center;
+}
+.gptOCRFileContentsSize {
+  display: flex;
+  text-align: center;
+  color: #034aa6;
+  font-size: 12px;
+  font-weight: bold;
+}
+.gptOCRFileContentsImgPreview {
+  width: 70%;
+  height: 100%;
+}
+.gptOCRPdfPreview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+
+.gptOCRPdfPageNote {
+  font-size: 12px;
+  color: #666;
+  margin-top: 5px;
+}
+.gptOCRFileContentsDelUploadHolder {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: -60px;
+}
+.gptOCRFileContentsDelUploadContents {
+  display: flex;
+  gap: 10px;
+}
+.gptOCRFileContentsDeleteImg,
+.gptOCRFileContentsUploadImg {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+.gptOCRResultHolder {
+  flex-direction: column;
+  margin-top: -10px;
+}
+.gptOCRResultHolderHeader {
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: underline;
+}
+/* .streamedImageLink {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 10px;
+} */
+
+@keyframes gptTranslationLanguageSlideIn {
+  0% {
+    transform: translateY(25%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes gptOCRFileContentsLanguageSlideIn {
+  0% {
+    transform: translateX(-20%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes gptTranslationSlideIn {
+  0% {
+    transform: translateX(-20%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes chatGptSectionSlideIn {
+  0% {
+    transform: translateX(-20%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes gptQuestionAnswerSlideIn {
+  0% {
+    transform: translateX(-20%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes gptPredefinedSlideIn {
+  0% {
+    transform: translateX(-20%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

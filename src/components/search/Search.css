@@ -1,0 +1,246 @@
+.searchDark,
+.searchLight {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  border-radius: 7px;
+  margin: 20px auto;
+  padding: 6px;
+  width: calc(100% - 20px);
+  min-width: 150px;
+  max-width: 800px;
+  @media screen and (max-width: 920px) {
+    width: 80%;
+  }
+}
+.searchDark {
+  border: 1px solid #787A7A;
+}
+.searchLight {
+  border: 1px solid #9499a1;
+}
+.searchEngineIconHolder {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+  width: 76%;
+}
+
+.homeWelcome {
+  display: block;
+  position: absolute;
+  top: -30px;
+  left: 0;
+}
+.homeWelcomeContainer {
+  display: flex;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 14px;
+}
+.homeWelcomeSecName {
+  display: flex;
+  font-size: 14px;
+  font-weight: 60px;
+  color: rgb(58, 114, 185);
+}
+.homeBookmarkLocation {
+  display: block;
+  position: absolute;
+  top: 80px;
+  right: 0;
+}
+.homeBookmarkLocationHolder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  font-weight: 600;
+  font-size: 14px;
+}
+.homeBookmarkLocationText {
+  display: flex;
+  font-size: 14px;
+  font-weight: 60px;
+  color: rgb(58,114,185);
+}
+.folderIcon {
+  display: flex;
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  margin-top: -10px;
+  cursor: pointer;
+}
+.searchSendIcon {
+  width: 15px;
+  height: 15px;
+}
+.searchEngineIcon {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+}
+.searchVertLine {
+  width: 3px;
+  height: 20px;
+}
+.searchInputDark,
+.searchInputLight {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 15px;
+  width: 100%;
+  font-size: 12px;
+  flex-grow: 1;
+}
+.searchInputDark {
+  color: white;
+}
+.searchInputLight {
+  color: black;
+}
+.searchInputDark::placeholder {
+  color: white;
+  font-size: 11px;
+}
+.searchInputLight::placeholder {
+  color: black;
+  font-size: 11px;
+}
+
+.searchBtnHolderDark,
+.searchBtnHolderLight {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  padding: 9px;
+  cursor: pointer;
+}
+.searchBtnHolderLight {
+  background: linear-gradient(180deg, #00ccff 0%, #034aa6 100%);
+  transition: transform 0.3s ease;
+  color: white;
+}
+.searchBtnHolderDark {
+  background: #787A7A;
+  transition: transform 0.3s ease;
+  color: white;
+}
+
+.searchEngineOption,
+.searchEngineOptionDark {
+  display: block;
+  position: absolute;
+  margin-top: 50px;
+  margin-left: -4px;
+  z-index: 1000;
+  width: 190px;
+  padding: 9px;
+  border-radius: 6px;
+  animation: engineSlideIn 0.6s ease-in-out;
+}
+.searchEngineOption {
+  background-color: #ffffff;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+.searchEngineOptionDark {
+  background-color: rgb(34, 33, 33);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.searchEngineOption::before,
+.searchEngineOptionDark::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 9px;
+  border-width: 0 10px 10px 10px;
+  border-style: solid;
+  z-index: 1000;
+}
+.searchEngineOption::before {
+  border-color: transparent transparent white transparent;
+}
+.searchEngineOptionDark::before {
+  border-color: transparent transparent rgb(34, 33, 33) transparent;
+}
+
+.searchEngineOptionContents {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.googleOptionHolder,
+.googleScholarOptionHolder,
+.googleOptionHolderDark,
+.googleScholarOptionHolderDark {
+  display: flex;
+  gap: 10px;
+  padding: 6px;
+  cursor: pointer;
+}
+.googleOptionHolder:hover,
+.googleScholarOptionHolder:hover {
+  background-color: #eef1f9;
+  border-radius: 6px;
+  transition: background-color 0.3s;
+}
+.googleOptionHolderDark:hover,
+.googleScholarOptionHolderDark:hover {
+  background-color: #2c2c2c;
+  border-radius: 6px;
+  transition: background-color 0.3s;
+}
+
+.googleText,
+.googleScholarText {
+  font-size: 12px;
+  color: #000000;
+  font-weight: 500;
+  margin-top: 3px;
+}
+.googleTextDark,
+.googleScholarTextDark {
+  font-size: 12px;
+  color: white;
+  font-weight: 500;
+  margin-top: 3px;
+}
+
+.googleOptionHolderIcon,
+.googleScholarOptionHolderIcon {
+  width: 20px;
+  height: 20px;
+}
+.searchBtnHolderContainer {
+  display: flex;
+  position: relative;
+}
+
+.searchEngineIconHolderContainer {
+  display: flex;
+  position: relative;
+}
+
+@keyframes engineSlideIn {
+  0% {
+    transform: translateY(30%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

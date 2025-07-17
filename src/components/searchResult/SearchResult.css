@@ -1,0 +1,329 @@
+.searchResults {
+  display: flex;
+  flex-direction: column;
+  margin: 100px auto 10px auto;
+  padding: 6px 6px 60px 6px;
+  width: calc(100% - 20px);
+  min-width: 150px;
+  max-width: 800px;
+  @media screen and (max-width: 920px) {
+    width: 80%;
+  }
+}
+.searchResultsWithNoToken {
+  display: flex;
+  flex-direction: column;
+  margin: 30px auto 10px auto;
+  padding: 6px 6px 60px 6px;
+  width: calc(100% - 20px);
+  min-width: 150px;
+  max-width: 800px;
+  @media screen and (max-width: 920px) {
+    width: 80%;
+  }
+}
+.searchResultTotal {
+  font-size: 14px;
+  font-weight: 600;
+  color: #202020;
+  margin-bottom: 10px;
+  animation: searchResultSlide 0.6s ease-in-out;
+}
+.searchResultTotalDark {
+  font-size: 14px;
+  font-weight: 600;
+  color: #c7cece;
+  margin-bottom: 10px;
+  animation: searchResultSlide 0.6s ease-in-out;
+}
+.searchResultsHolder {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.searchResultInfoHolder,
+.searchResultInfoHolderDark {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  gap: 10px;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  animation: searchResultSlide 0.6s ease-in-out;
+  @media (max-width: 360px) {
+    width: 240px;
+    max-width: 240px;    
+  }
+}
+.searchResultInfoHolder {
+  background-color: #f6f6f6;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+.searchResultInfoHolderDark {
+  background-color: rgb(34, 33, 33);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+.searchResultsImage {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+.searchResultsInfoHolder {
+  display: flex;
+  flex-direction: column;
+  margin-top: -10px;
+}
+.searchResultsTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: #202020;
+  @media (max-width: 360px) {
+    width: 110px;
+    max-width: 110px; 
+  }
+}
+.searchResultsTitleDark {
+  font-size: 14px;
+  font-weight: 600;
+  color: #c7cece;
+  @media (max-width: 360px) {
+    width: 110px;
+    max-width: 110px; 
+  }
+}
+.searchResultsDescription {
+  font-size: 12px;
+  color: #5a5a5a;
+  margin-top: -6px;
+  @media (max-width: 360px) {
+    width: 110px;
+    max-width: 110px; 
+  }
+}
+.searchResultsDescriptionDark {
+  font-size: 12px;
+  color: #c7cece;
+  margin-top: -6px;
+  @media (max-width: 360px) {
+    width: 110px;
+    max-width: 110px; 
+  }
+}
+.searchResultsLink {
+  font-size: 13px;
+  color: #775da6;
+  font-weight: 500;
+  cursor: pointer;
+}
+.saveSearchIcon,
+.scholarBookmarkIcon {
+  width: 22px;
+  height: 30px;
+  margin-left: auto;
+  cursor: pointer;
+}
+.pagination {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+}
+
+.pagination-button,
+.pagination-buttonDark {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+}
+.pagination-button {
+  color: #1b2126;
+}
+.pagination-buttonDark {
+  color: #c7cece;
+}
+
+.active {
+  background-color: #034aa6;
+  color: white;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: not-allowed;
+}
+
+.pagination-button-previous,
+.pagination-button-next,
+.pagination-button-previousDark,
+.pagination-button-nextDark {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+}
+.pagination-button-previous,
+.pagination-button-next {
+  color: #1b2126;
+}
+.pagination-button-previousDark,
+.pagination-button-nextDark {
+  color: #c7cece;
+}
+.pagination-ellipses {
+  display: flex;
+  gap: 3px;
+  font-weight: 500;
+  font-size: 20px;
+  margin-top: -6px;
+}
+.previousDisable,
+.nextDisable,
+.previousDisableDark,
+.nextDisableDark {
+  cursor: not-allowed;
+}
+.previousDisable,
+.nextDisable {
+  color: #c7cece;
+}
+.previousDisableDark,
+.nextDisableDark {
+  color: #343636;
+}
+
+.searchingResults,
+.searchResultsAppearHere,
+.searchingResultsDark,
+.searchResultsAppearHereDark,
+.searchResultsErrorDark,
+.searchResultsError {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 70px auto;
+  font-size: 14px;
+  font-style: italic;
+}
+
+.searchingResultsDark,
+.searchResultsAppearHereDark,
+.searchResultsErrorDark,
+.searchResultsError {
+  color: #c7cece;
+}
+
+.scholarSearchedResultContentsHolder,
+.scholarSearchedResultContentsHolderDark {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  margin-top: 10px;
+  border-radius: 5px;
+  padding: 7px;
+  gap: 7px;
+  animation: searchResultSlide 0.6s ease-in-out;
+  @media (max-width: 360px) {
+    width: 240px;
+    max-width: 240px;    
+  }
+}
+
+.scholarSearchedResultContentsHolder {
+  background-color: #f6f6f6;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+.scholarSearchedResultContentsHolderDark {
+  background-color: rgb(34, 33, 33);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.scholarSearchResultsContent {
+  display: flex;
+  gap: 20px;
+}
+
+.scholarSearchResultPic {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+.scholarSearchResultsContentContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.scholarSearchResultContentHeader,
+.scholarSearchResultContentHeaderDark {
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  @media (max-width: 360px) {
+    width: 110px;
+    max-width: 110px; 
+  }
+}
+.scholarSearchResultContentHeader,
+.scholarSearchResultContentDesc {
+  color: #202020;
+}
+.scholarSearchResultContentHeaderDark,
+.scholarSearchResultContentDescDark {
+  color: #c7cece;
+}
+
+.scholarSearchResultContentDesc,
+.scholarSearchResultContentDescDark {
+  display: flex;
+  font-size: 12px;
+  margin-top: -10px;
+  @media (max-width: 360px) {
+    width: 110px;
+    max-width: 110px; 
+  }
+}
+
+.scholarSearchResultAuthors {
+  margin-bottom: 6px;
+}
+.pdfCitationsRelatedPages {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+.scholarSearchResultsContentDetail {
+  display: flex;
+  color: #775da6;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  text-decoration: none;
+}
+.scholarBookmarkIconHolder {
+  display: flex;
+  margin-left: auto;
+}
+.searchResultsLinkContainer {
+  display: flex;
+  position: relative;
+}
+.saveSearchIconHolder {
+  display: flex;
+  position: relative;
+}
+
+@keyframes searchResultSlide {
+  0% {
+    transform: translateX(-50%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

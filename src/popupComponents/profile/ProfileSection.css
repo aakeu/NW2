@@ -1,0 +1,538 @@
+.profileSectionContainer {
+  display: flex;
+  flex-direction: column;
+  width: 85%;
+  margin: 15px 25px 30px 30px;
+  padding: 5px 30px 20px 30px;
+  background-color: #ffffff;
+  box-shadow: rgba(99, 99, 99, 0.1) 0px 2px 8px 0px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  border-radius: 6px;
+  animation: profileSectionSlideIn 0.6s ease-in-out;
+}
+.profileSectionHeader,
+.editProfileHeader,
+.changePasswordHeader {
+  display: flex;
+  font-family: Poppins;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #202020;
+}
+.changePasswordHeader {
+  margin-top: -10px;
+}
+
+.editProfileHeader {
+  font-size: 17px;
+  margin-top: -4px;
+}
+
+.profileSectionDetail {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+.profileSectionDetailImg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 7px;
+}
+.profileSectionDetailInfo {
+  display: flex;
+  flex-direction: column;
+}
+.profileSectionUserHeader {
+  display: flex;
+  font-family: Poppins;
+  font-size: 9px;
+  font-weight: 700;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #034aa6;
+  text-transform: uppercase;
+  margin-top: 6px;
+}
+.profileSectionUserHolder {
+  display: flex;
+  gap: 5px;
+  margin-top: -8px;
+}
+.profileSectionUserName {
+  display: flex;
+  display: flex;
+  font-family: Poppins;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 20px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #2e2e2e;
+}
+.profileSectionStatus {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+}
+.profileSectionStatusState {
+  display: flex;
+  width: 6px;
+  height: 6px;
+  background-color: #f27105;
+  border-radius: 50%;
+}
+.profileSectionStatusText {
+  display: flex;
+  font-family: Poppins;
+  font-size: 8px;
+  font-weight: 600;
+  line-height: 20px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #f27105;
+  text-transform: uppercase;
+}
+.profileSectionEditBtn {
+  display: flex;
+  gap: 10px;
+  font-family: Poppins;
+  font-size: 11px;
+  font-weight: 600;
+  background-color: #e7eefa;
+  padding: 8px;
+  box-shadow: rgba(99, 99, 99, 0.1) 0px 2px 8px 0px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  border-radius: 7px;
+  cursor: pointer;
+  color: #034aa6;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  margin-top: -4px;
+  width: 100px;
+  max-width: 150px;
+}
+
+.profileSectionEmailHolder {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+.profileSectionEmailIconHolder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.profileSectionEmailIcon {
+  display: flex;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+}
+.profileSectionEmailContents {
+  display: flex;
+  flex-direction: column;
+}
+.profileSectionEmailText,
+.profileSectionEmail,
+.profileSectionFeaturesHeader,
+.profileSectionFeaturesAccHeader,
+.profileSectionAccText {
+  display: flex;
+  display: flex;
+  font-family: Poppins;
+  font-weight: 700;
+  line-height: 20px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+.profileSectionEmailText {
+  color: #c7c7c7;
+  font-size: 12px;
+}
+.profileSectionEmail {
+  color: #202020;
+  font-size: 10px;
+}
+.profileSectionBorderImg {
+  margin-top: 20px;
+}
+.profileSectionFeaturesContainer {
+  display: flex;
+  flex-direction: column;
+  margin-left: 40px;
+}
+.profileSectionFeaturesHeader,
+.profileSectionFeaturesAccHeader {
+  color: #034aa6;
+  font-size: 15px;
+  margin-left: 6px;
+}
+.profileSectionAccText {
+  color: #202020;
+  font-size: 14px;
+  margin-bottom: 3px;
+}
+.profileSectionFeaturesContents,
+.profileSectionAccountSummary {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-left: 10px;
+}
+.profileSectionFeaturesContents {
+  gap: 20px;
+}
+.profileSectionFeaturesContents {
+  margin-top: 20px;
+}
+.profileSectionAccountSummary {
+  margin-top: 10px;
+  gap: 60px;
+}
+.profileSectionFeaturesContentsPart1,
+.profileSectionFeaturesContentsPart2 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.profileSectionFeaturesContentDetail {
+  display: flex;
+  gap: 5px;
+}
+.profileSectionFeaturesContentDetailImg,
+.profileSectionFeaturesContentDetailIcon {
+  width: 20px;
+  height: 20px;
+}
+.profileSectionFeaturesContentDetailIcon2 {
+  width: 18px;
+  height: 18px;
+}
+.profileSectionFeaturesContentDetailText {
+  display: flex;
+  display: flex;
+  font-family: Poppins;
+  font-weight: 600;
+  line-height: 20px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #5f5b5b;
+}
+.profileSectionAccValueText,
+.editProfileInstruction {
+  display: flex;
+  display: flex;
+  font-family: Poppins;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 20px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #0a58d0;
+  margin-top: 3px;
+}
+.editProfileInstruction {
+  color: #202020;
+  font-size: 11px;
+  margin-top: -6px;
+}
+.profileSectionFeaturesUpgradeBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, #00ccff 0%, #034aa6 100%);
+  transition: transform 0.3s ease;
+  gap: 5px;
+  color: white;
+  font-size: 12px;
+  font-family: Poppins;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  padding: 8px;
+  cursor: pointer;
+  width: 125px;
+  margin-top: 30px;
+  margin-left: 10px;
+}
+.profileSectionFeaturesAccActivities {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+}
+.profileSectionAccountSummaryDet {
+  display: flex;
+  flex-direction: column;
+}
+.profileSectionAccountSummaryHolder {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+progress {
+  width: 100%;
+  appearance: none;
+}
+
+progress::-webkit-progress-bar {
+  background-color: #e7eefa;
+  border-radius: 5px;
+  height: 4px;
+  margin-top: 5px;
+}
+
+progress::-webkit-progress-value {
+  background-color: #0a58d0;
+  border-radius: 3px;
+  height: 4px;
+  margin-top: 5px;
+}
+
+.editProfileModal {
+  display: block;
+  position: absolute;
+  width: 340px;
+  background-color: #ffffff;
+  padding: 10px 30px 10px 30px;
+  box-shadow: rgba(99, 99, 99, 0.1) 0px 2px 8px 0px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  top: 10px;
+  left: 170px;
+  z-index: 9999;
+  border-radius: 7px;
+  animation: editProfileSlideIn 0.6s ease-in-out;
+}
+.editProfileModalClose {
+  display: flex;
+  margin-left: auto;
+  width: 14px;
+  height: 14px;
+  cursor: pointer;
+  margin-right: -6px;
+}
+.editProfileModalContainer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5px;
+}
+.editProfileModalNameHolder {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.editProfileModalNameText,
+.editProfileUploadText {
+  font-family: Poppins;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 1px;
+  text-align: left;
+  color: #c7c7c7;
+  margin-top: 6px;
+}
+.editProfileUploadText {
+  color: black;
+}
+.editProfileModalNameInput {
+  display: flex;
+  padding: 6px;
+  border-radius: 7px;
+  background-color: transparent;
+  border: 1px solid black;
+  outline: none;
+}
+.editProfileModalNameInputExtra {
+  border: 1px solid red;
+}
+.editProfileImgUpload {
+  display: flex;
+  gap: 5px;
+  cursor: pointer;
+  border-radius: 7px;
+  background-color: rgb(241, 238, 238);
+  padding: 6px 30px;
+  box-shadow: rgba(99, 99, 99, 0.1) 0px 2px 8px 0px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  /* width: 200px; */
+  margin-top: 10px;
+}
+.editProfileUploadContainer {
+  display: flex;
+  gap: 10px;
+  background-color: transparent;
+  margin-left: -14px;
+}
+.editProfileUploadFile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  padding: 6px;
+  border-radius: 5px;
+  gap: 7px;
+}
+
+.editProfileBtn,
+.changePasswordBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, #00ccff 0%, #034aa6 100%);
+  box-shadow: 0px 4px 8px 0px #034aa61f;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease, background-color 0.3s, box-shadow 0.3s;
+  gap: 5px;
+  width: 150px;
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  padding: 0px 8px;
+  margin-top: 20px;
+  cursor: pointer;
+  padding: 8px;
+  margin-left: auto;
+}
+.editProfileBtnExtra,
+.changePasswordBtnExtra {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #d1d5db, #d1d5db);
+  box-shadow: 0px 4px 8px 0px #034aa61f;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease, background-color 0.3s, box-shadow 0.3s;
+  gap: 5px;
+  width: 150px;
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  padding: 0px 8px;
+  margin-top: 10px;
+  padding: 8px;
+  margin-left: auto;
+}
+.editProfileModalNameErrorHolder {
+  display: flex;
+  flex-direction: column;
+}
+.editProfileModalNameError {
+  color: red;
+  font-size: 12px;
+}
+
+.changePasswordContainer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 4px;
+}
+.changeOldPasswordHolderErrorHolder,
+.changeNewPasswordHolderErrorHolder,
+.changeConfirmNewPasswordHolderErrorHolder {
+  display: flex;
+  flex-direction: column;
+}
+.changeOldPasswordHolderErrorHolder {
+  margin-top: -11px;
+}
+
+.changeOldPasswordHolder,
+.changeNewPasswordHolder,
+.changeConfirmNewPasswordHolder {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 5px;
+  position: relative;
+}
+
+.changeOldPasswordText,
+.changeNewPasswordText,
+.changeConfirmNewPasswordText {
+  font-family: Poppins;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 1px;
+  text-align: left;
+  color: #c7c7c7;
+  margin-top: 6px;
+}
+.changeOldPasswordInput,
+.changeNewPasswordInput,
+.changeConfirmNewPasswordInput {
+  display: flex;
+  padding: 7px;
+  border-radius: 7px;
+  background-color: #ffffff;
+  border: 2px solid #034aa6;
+  outline: #034aa6;
+}
+.changeOldPasswordInput::placeholder,
+.changeNewPasswordInput::placeholder,
+.changeConfirmNewPasswordInput::placeholder {
+  font-size: 14px;
+  color: #202020;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+.changeOldPasswordInputExtra,
+.changeNewPasswordInputExtra,
+.changeConfirmNewPasswordInputExtra {
+  border: 1px solid red;
+}
+.changePasswordEye {
+  display: block;
+  position: absolute;
+  margin-top: 37px;
+  right: 6px;
+  width: 15px;
+  height: 15px;
+  z-index: 9999;
+  cursor: pointer;
+}
+.oldPasswordPasswordError,
+.newPasswordPasswordError,
+.confirmNewPasswordPasswordError {
+  color: red;
+  font-size: 12px;
+}
+@keyframes profileSectionSlideIn {
+  0% {
+    transform: translateX(-20%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes editProfileSlideIn {
+  0% {
+    transform: translateX(-20%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

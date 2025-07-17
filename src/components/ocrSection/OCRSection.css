@@ -1,0 +1,243 @@
+.ocr-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 8px;
+    padding-right: 8px;
+    padding-bottom: 8px;
+    padding-left: 20px;
+    animation: ocr-slide-in 0.6s ease-in-out;
+}
+
+.ocr-interface {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.ocr-req {
+    height: 30vh;
+    width: 100%;
+    border: 2px dashed #034AA6;
+    border-radius: 8px;
+}
+
+.ocr-res {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    height: 45vh;
+    border-radius: 8px;
+    padding: 18px;
+    background-color: #f5f5f5;
+}
+
+.ocr-res.ocr-dark{
+    background-color: #222121;
+}
+
+.ocr-res > img {
+    width: 100%;
+    height: 85%;
+    border-radius: 8px;
+}
+
+.ocr-upload-icon-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#ocr-upload {
+    display: none;
+}
+
+.ocr-upload-icon {
+    cursor: pointer;
+}
+
+.ocr-upload-info {
+    color: #F27105;
+}
+
+.ocr-take-screenshot-btn {
+    border: 0;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: small;
+    color: white;
+    background: linear-gradient(to bottom, #00ccff, #034aa6);
+}
+
+.ocr-take-screenshot-btn:hover{
+    background: linear-gradient(to top, #00ccff, #034aa6);
+}
+
+.ocr-res-action-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    justify-content: space-between;
+}
+
+.ocr-res-action-container .ocr-phase1 {
+    display: flex;
+    gap: 6px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.ocr-phase1 .ocr-change-img {
+    border-radius: 4px;
+    background-color: #034AA6;
+    padding: 4px;
+    cursor: pointer;
+}
+
+.ocr-phase1 .ocr-extract-text {
+    border-radius: 4px;
+    border: 2px solid #034AA6;
+    padding: 4px;
+    cursor: pointer;
+}
+
+.ocr-res-action-container .ocr-delete {
+    border-radius: 4px;
+    background-color: #f5f5f5 ;
+    padding: 4px;
+    cursor: pointer;
+    border: none;
+}
+
+.ocr-result-container {
+    width: 100%;
+}
+
+.ocr-result-header {
+    width: 100%;
+}
+
+.ocr-response-text {
+    width: 100%;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+    height: 22vh;
+    overflow-y: auto;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+}
+
+.ocr-response {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    background-color: inherit;
+    outline: none;
+    resize: none;
+    color: black;
+}
+
+.ocr-response-dark {
+    color: white;
+}
+
+.ocr-response-text.ocr-dark {
+    background: #222121;
+}
+
+.ocr-res-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-top: 8px;
+}
+
+.ocr-res-actions > * {
+    cursor: pointer;
+}
+
+.ocr-response-loader {
+    display: flex;
+    padding: 12px;
+    gap: 4px;
+    width: 20%;
+    border-radius: 12px;
+}
+
+.ocr-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 9999px;
+    background-color: black;
+}
+
+.ocr-dot.ocr-dot-dark {
+    background-color: white;
+}
+
+.ocr-animate-wave-1 {
+    animation: wave 1.2s infinite ease-in-out;
+    animation-delay: 0s;
+}
+
+.ocr-animate-wave-2 {
+    animation: wave 1.2s infinite ease-in-out;
+    animation-delay: 0.2s;
+}
+
+.ocr-animate-wave-3 {
+    animation: wave 1.2s infinite ease-in-out;
+    animation-delay: 0.4s;
+}
+
+.ocr-response-loader-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+@media (min-width: 768px){
+    .ocr-res, .ocr-result-container {
+        width: 60%;
+    }
+
+    .ocr-response-loader {
+        width: 12%;
+    }
+}
+
+@keyframes ocr-slide-in {
+    0% {
+        transform: translateX(-50%);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes wave {
+    0%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-5px);
+    }
+}

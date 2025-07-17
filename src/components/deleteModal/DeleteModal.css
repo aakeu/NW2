@@ -1,0 +1,270 @@
+.deleteModal,
+.deleteModalDark {
+  display: block;
+  position: fixed;
+  width: 270px;
+  padding: 10px 30px;
+  box-shadow: rgba(99, 99, 99, 0.1) 0px 2px 8px 0px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10000;
+  border-radius: 7px;
+  animation: deleteModalSlideIn 0.6s ease-in-out;
+  margin-bottom: 30px;
+}
+.deleteModal{
+  background-color: #ffffff;
+}
+.deleteModalDark{
+  background-color: rgb(53, 51, 51);
+}
+.deleteModalContent {
+    display: flex;
+    flex-direction: column;
+}
+.meetingDescriptionModalDark,
+.meetingDescriptionModal {
+  display: block;
+  position: fixed;
+  padding: 10px 30px;
+  box-shadow: rgba(99, 99, 99, 0.1) 0px 2px 8px 0px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  top: 50%;
+  left: 50%;
+  height: 450px;
+  max-height: 450px;
+  overflow-y: auto;
+  transform: translate(-50%, -50%);
+  z-index: 10000;
+  border-radius: 7px;
+  animation: deleteModalSlideIn 0.6s ease-in-out;
+  margin-bottom: 30px;
+}
+.meetingDescriptionModalDark {
+     background-color: rgb(53, 51, 51);
+     &::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: rgb(53, 51, 51);
+        border-radius: 8px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 6px;
+        border: 1px solid rgb(167, 198, 224);
+    }
+
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.3) rgb(53, 51, 51);
+}
+.meetingDescriptionModal {
+     background-color: #ffffff;
+     &::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: #ffffff;
+        border-radius: 8px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 6px;
+        border: 1px solid rgb(167, 198, 224);
+    }
+
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.3) rgb(167, 198, 224);
+}
+.meetingDescriptionModalDark,
+.meetingDescriptionModal {
+    @media (max-width: 768px) {
+       width: 270px;
+    }
+    @media (min-width: 769px) {
+       width: 400px;
+    }
+}
+.deleteModalClose {
+  display: flex;
+  margin-left: auto;
+  width: 14px;
+  height: 14px;
+  cursor: pointer;
+  margin-right: -9px;
+}
+.deleteModalHeader,
+.meetingDescriptionHeader,
+.meetingDescriptionHeaderDark {
+    display: flex;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: Poppins;
+}  
+.deleteModalHeader,
+.meetingDescriptionHeader {
+    color: #034AA6;
+}
+.deleteModalHeaderDark,
+.meetingDescriptionHeaderDark {
+    color: #c5c1c1;
+}
+.deleteModalContentInfo {
+    display: flex;
+    font-size: 12px;
+    font-weight: 400;
+    font-style: italic;
+    margin-top: -4px;
+    cursor: pointer;
+    font-family: Poppins;
+    color: #979797;
+}
+.meetingDescriptionContentInfo {
+    display: flex;
+    font-size: 12px;
+    font-weight: 400;
+    margin-top: -4px;
+    cursor: pointer;
+    font-family: Poppins;
+    color: #979797;
+}
+.deleteModalContentText,
+.deleteModalContentTextDark {
+    display: flex;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: -4px;
+    cursor: pointer;
+    font-family: Poppins;
+    margin-top: 10px;
+    max-width: 100%; 
+    word-break: break-word; 
+    overflow-wrap: anywhere; 
+    white-space: normal;
+}
+
+.delete-modal-context-chat {
+    display: flex;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: Poppins;
+    text-overflow: ellipsis;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    color: #034AA6;
+    margin-top: 10px;
+}
+
+.delete-modal-context-chat.chat-dark{
+    color: #c5c1c1;
+}
+
+.deleteModalContentText {
+    color: #034AA6;
+}
+.deleteModalContentTextDark {
+    color: #c5c1c1;
+}
+.deleteModalContentButtons {
+    display: flex;
+    justify-content: right;
+    gap: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.deleteModalDeleteButton,
+.deleteModalDeleteButtonDark {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: Poppins;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px;
+    transition: transform 0.3s ease;
+}
+.deleteModalCancelButton,
+.deleteModalCancelButtonDark {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    background-color: transparent;
+    border: 1px solid #034AA6;
+    color: #034AA6;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: Poppins;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px;
+    transition: transform 0.3s ease;
+}
+.deleteModalDeleteButton {
+    background-color: transparent;
+    border: 1px solid #FF0202;
+    color: #FF0202;
+}
+.deleteModalDeleteButtonDark {
+    background-color: transparent;
+    border: 1px solid rgb(216, 110, 110);
+    color: rgb(216, 110, 110);
+}
+.deleteModalCancelButton {
+    background-color: transparent;
+    border: 1px solid #034AA6;
+    color: #034AA6;
+}
+.deleteModalCancelButtonDark {
+    background-color: transparent;
+    border: 1px solid #c5c1c1;
+    color: #c5c1c1;
+}
+
+.deleteModalWarning {
+    display: flex;
+    gap: 6px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.deleteModalWarningIcon {
+    width: 20px;
+    height: 20px;
+}
+.deleteModalWarningText,
+.deleteModalWarningTextDark {
+    font-size: 12px;
+    font-weight: 400;
+    font-style: italic;
+    cursor: pointer;
+    font-family: Poppins;
+    margin-top: 3px;
+}
+.deleteModalWarningText {
+    color: #FF0202;
+}
+.deleteModalWarningTextDark {
+    color: rgb(216, 110, 110);
+}
+
+@keyframes deleteModalSlideIn {
+    0% {
+      transform: translate(-50%, 50%);
+      opacity: 0;
+    }
+    100% {
+      transform: translate(-50%, -50%);
+      opacity: 1;
+    }
+}

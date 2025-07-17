@@ -1,0 +1,694 @@
+.dashboardSection {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0px 0px 0px;
+  height: 100%;
+  overflow-y: scroll;
+  scrollbar-width: none; 
+  -ms-overflow-style: none; 
+}
+
+.dashboardSection::-webkit-scrollbar {
+  display: none;
+}
+
+.dashboardCollectionSection, 
+.dashboardFavoriteSection,
+.dashboardArticlesSection,
+.dashboardImagesSection,
+.dashboardLinksSection, 
+.dashboardVideosSection,
+.dashboardMeetingSection {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 30px 0px 20px;
+  animation: tabsSection 0.6s ease-in-out;
+}
+
+.dashboardCollectionSectionInfo {
+  background-color: #F27105;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+  font-size: 11px;
+  margin: 10px auto;
+  width: 100%;
+  text-align: center;
+}
+
+.dashboardHeaderSectionContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboardHeaderSection {
+  display: flex;
+  justify-content: space-between;
+  /* gap: 10px; */
+  width: 100%;
+  @media (max-width: 680px) {
+    display: flex;
+    flex-direction: column;   
+    gap: 10px;
+  }
+}
+.dashboardHeaderSectionLeft {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  @media (max-width: 680px) {
+    justify-content: space-between;
+    /* width: 90%;  */
+  }
+}
+.dashboardHeaderSectionLeftTitle, 
+.dashboardHeaderSectionRightTitle {
+  font-family: Poppins;
+  font-size: 12px;
+  font-weight: 600;
+}
+.dashboardHeaderSectionLeftTitle, 
+.dashboardHeaderSectionRightTitle {
+  color: #192436
+}
+.dashboardHeaderSectionLeftTitleDark, 
+.dashboardHeaderSectionRightTitleDark {
+  color: white;
+}
+.dashboardHeaderSectionRightTitle,
+.dashboardHeaderSectionRightTitleDark {
+  @media (max-width: 680px) {
+      display: none;
+  }
+ }
+.dashboardHeaderSectionLeftSearch, 
+.dashboardHeaderSectionLeftSearchDark {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  height: 40px;
+  @media (max-width: 439px) {
+    width: 180px;
+  }
+}
+.dashboardHeaderSectionLeftSearchDark {
+  border: 1px solid white;
+}
+.dashboardHeaderSectionLeftSearch {
+  /* border: 1px solid #192436; */
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+.dashboardHeaderSectionLeftSearchHolder {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  margin-top: -20px;
+  height: 40px;
+}
+.dashboardHeaderSectionLeftSearchImgHolder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(180deg, #00ccff 0%, #034aa6 100%);
+  transition: transform 0.3s ease;
+  padding: 5px;
+  border-radius: 5px;
+}
+.dashboardHeaderSectionLeftSearchInput, 
+.dashboardHeaderSectionLeftSearchInputDark {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  @media (max-width: 439px) {
+    width: 100px;
+    margin-left: -10px;
+  }
+}
+.dashboardHeaderSectionLeftSearchInput {
+  color: black;  
+}
+.dashboardHeaderSectionLeftSearchInputDark {
+  color: white;
+}
+.dashboardHeaderSectionLeftFilterImg {
+  cursor: pointer;
+  @media (max-width: 439px) {
+    margin-left: -10px;
+  }
+}
+.dashboardHeaderSectionRight {
+  display: flex;
+  width: 100%;
+  justify-content: right;
+  /* gap: 10px; */
+  @media (max-width: 439px) {
+    margin-left: 20px;
+  }
+}
+.dashboardHeaderSectionRightAddImg,
+.dashboardHeaderSectionRightCardImg,
+.dashboardHeaderSectionRightListImg {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+.dashboardFilterModal,
+.dashboardFilterModalDark {
+  display: block;
+  position: absolute;
+  top: 40px;
+  right: -20px;
+  z-index: 9999;
+  width: 100px;
+  padding: 9px;
+  border-radius: 6px;
+  animation: dashboardFilterModalSlideIn 0.6s ease-in-out;
+}
+
+.dashboardFilterModal {
+  background-color: #ffffff;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+.dashboardFilterModalDark {
+  background-color: rgb(34, 33, 33);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.dashboardRenameDeleteModal,
+.dashboardRenameDeleteModalDark, 
+.dashboardCardBookmarkDeleteModal,
+.dashboardCardBookmarkDeleteModalDark,
+.dashboardMeetingDeleteModalDark,
+.dashboardMeetingDeleteModal {
+  display: block;
+  position: absolute;
+  top: 7px;
+  right: 10px;
+  z-index: 9999;
+  /* width: 60px; */
+  padding: 9px;
+  border-radius: 6px;
+  animation: dashboardFilterModalSlideIn 0.6s ease-in-out;
+}
+
+.dashboardCardBookmarkDeleteModal,
+.dashboardCardBookmarkDeleteModalDark,
+.dashboardMeetingDeleteModalDark,
+.dashboardMeetingDeleteModal {
+  top: 40px;
+}
+
+.dashboardRenameDeleteModal, 
+.dashboardCardBookmarkDeleteModal,
+.dashboardMeetingDeleteModal {
+  background-color: #e8eaf0;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+.dashboardRenameDeleteModalDark, 
+.dashboardCardBookmarkDeleteModalDark,
+.dashboardMeetingDeleteModalDark {
+  background-color: rgb(75, 72, 72);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.dashboardFilterModalContent {
+  display: flex;
+  flex-direction: column;
+}
+.dashboardFilterModalRecent,
+.dashboardFilterModalName,
+.dashboardFilterModalAZ,
+.dashboardFilterModalRecentDark,
+.dashboardFilterModalNameDark,
+.dashboardFilterModalAZDark {
+  font-family: Poppins;
+  font-size: 14px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.dashboardFilterModalRecent,
+.dashboardFilterModalName,
+.dashboardFilterModalAZ {
+  background-color: #ffffff;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+.dashboardFilterModalRecentDark,
+.dashboardFilterModalNameDark,
+.dashboardFilterModalAZDark {
+  background-color: rgb(34, 33, 33);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.dashboardFilterModalRecentDark:hover,
+.dashboardFilterModalNameDark:hover,
+.dashboardFilterModalAZDark:hover {
+  background-color: #034AA6;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  border-radius: 5px;
+}
+
+.dashboardFilterModalRecent:hover,
+.dashboardFilterModalName:hover,
+.dashboardFilterModalAZ:hover {
+  background-color: #034AA6;
+  color: white;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  border-radius: 5px;
+}
+
+.dashboardCardFolder, 
+.dashboardCardFolderDark, 
+.dashboardSectionMeetingsCardContentsDark,
+.dashboardSectionMeetingsCardContents {
+  display: flex;
+  position: relative;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  border-radius: 5px;
+  padding: 10px;
+  @media (max-width: 360px) {
+    /* width: 100px; */
+  }
+}
+.dashboardCardFolder, 
+.dashboardSectionMeetingsCardContents {
+  background-color: white;
+}
+.dashboardCardFolderDark,
+.dashboardSectionMeetingsCardContentsDark {
+  background-color: rgb(34, 33, 33);
+}
+.dashboardCardFolderContent {
+  display: flex;
+  justify-content: space-between;
+}
+.dashboardCardFolderContentDetails {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+}
+.dashboardCardFolderImg {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 10px;
+}
+.dashboardCardFolderContentDetailsTitle,
+.dashboardCardFolderContentDetailsTitleDark, 
+.dashboardCardBookmarkContentTitle, 
+.dashboardCardBookmarkContentTitleDark, 
+.DashboardListFolderContentDetailsTitle,
+.DashboardListFolderContentDetailsTitleDark,
+.dashboardListBookmarkContentDetailsTitle,
+.dashboardListBookmarkContentDetailsTitleDark {
+  font-family: Poppins;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.dashboardCardFolderContentDetailsTitle, 
+.dashboardCardBookmarkContentTitle, 
+.DashboardListFolderContentDetailsTitle,
+.dashboardListBookmarkContentDetailsTitle {
+  color: #000000;
+}
+.dashboardListBookmarkContentDetailsTitle,
+.dashboardListBookmarkContentDetailsTitleDark,
+.dashboardCardBookmarkContentTitle,
+.dashboardCardBookmarkContentTitleDark  {
+    max-width: 100%; 
+    word-break: break-word; 
+    overflow-wrap: anywhere; 
+    white-space: normal;
+}
+.dashboardCardFolderContentDetailsTitleDark, 
+.dashboardCardBookmarkContentTitleDark, 
+.DashboardListFolderContentDetailsTitleDark, 
+.dashboardListBookmarkContentDetailsTitleDark {
+  color: white;
+}
+.dashboardCardFolderContentDetailsCount, 
+.dashboardCardBookmarkContentUrl {
+  font-family: Poppins;
+  font-size: 12px;
+  color: #ABACB0;
+}
+.dashboardCardFolderOptions, 
+.dashboardMeetingsOptions {
+  display: block;
+  position: absolute;
+  top: 10px;
+  right: 6px;
+  cursor: pointer;
+}
+
+.dashboardCollectionSectionContent, 
+.dashboardSectionMeetingsCard {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr 1fr;
+  padding: 10px 0px 60px 10px;
+  
+  @media (min-width: 522px) {
+    grid-template-columns: repeat(3, 1fr); 
+  }
+  
+  @media (min-width: 673px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.dashboardCollectionSectionListContent, 
+.dashboardSectionMeetingsList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px 0px 60px 10px;
+}
+.dashboardCardFolderEllipses, 
+.DashboardListFolderEllipses,
+.DashboardListBookmarkEllipses,
+.dashboardMeetingsEllipses {
+  width: 11px;
+  height: 15px;
+}
+
+.dashboardRenameDeleteModalContent,
+.dashboardMeetingDeleteModalContent {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.dashboardRenameDeleteModalContentRename, 
+.dashboardRenameDeleteModalContentDelete, 
+.dashboardCardBookmarkDeleteModalContentDelete,
+.dashboardMeetingDeleteModalContentDelete {
+  display: flex;
+  gap: 7px;
+  padding: 6px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.dashboardRenameDeleteModalContentRename:hover,
+.dashboardRenameDeleteModalContentDelete:hover, 
+.dashboardCardBookmarkDeleteModalContentDelete:hover,
+.dashboardMeetingDeleteModalContentDelete:hover {
+  background-color: #034AA6;
+  color: white;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  border-radius: 5px;
+}
+.dashboardRenameDeleteModalContentRenameImg, 
+.dashboardRenameDeleteModalContentDeleteImg, 
+.dashboardCardBookmarkDeleteModalContentDeleteImg,
+.dashboardMeetingDeleteModalContentDeleteImg {
+  width: 14px;
+  height: 14px;
+}
+
+.dashboardCardBookmark, 
+.dashboardCardBookmarkDark {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  border-radius: 5px;
+  padding: 10px;
+  @media (max-width: 456px) {
+    width: 120px;
+    max-width: 120px;
+  }
+}
+.dashboardCardBookmark {
+  background-color: white;
+}
+.dashboardCardBookmarkDark {
+  background-color: rgb(34, 33, 33);
+}
+.dashboardCardBookmarkImgHolder {
+  display: flex;
+  position: relative;
+}
+.dashboardCardBookmarkImg,
+.dashboardListBookmarkContentImg {
+  /* display: flex; */
+  position: relative;
+  width: 65px;
+  height: 65px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+.dashboardCardBookmarkContentSource, 
+.dashboardListBookmarkContentDetailsSource {
+  display: block;
+  position: absolute;
+  top: 6px;
+  left: 50px;
+  background-color: #034AA6;
+  color: white;
+  padding: 5px;
+  border-radius: 50%;
+  font-size: 10px;
+  z-index: 1000;
+}
+.dashboardCardBookmarkEllipses {
+  display: block;
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  z-index: 1000;
+  width: 11px;
+  height: 15px;
+  cursor: pointer;
+}
+.dashboardCardBookmarkDeleteModalContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.DashboardListFolder, 
+.DashboardListFolderDark,
+.dashboardListBookmark,
+.dashboardListBookmarkDark {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  @media (max-width: 400px) {
+    width: 250px;
+    max-width: 250px;
+  }
+}
+
+.DashboardListFolder, 
+.dashboardListBookmark,
+.dashboardSectionMeetingsListContents {
+  background-color: #ffffff;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+.DashboardListFolderDark, 
+.dashboardListBookmarkDark,
+.dashboardSectionMeetingsListContentsDark {
+  background-color: rgb(34, 33, 33);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.DashboardListFolderContent, 
+.dashboardListBookmarkContentImgDetailsHolder{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+.dashboardSectionMeetingsListContentsDark,
+.dashboardSectionMeetingsListContents {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  gap: 10px;
+  cursor: pointer;
+  padding: 10px;
+}
+.DashboardListFolderImg {
+  width: 43px;
+  height: 43px;
+}
+.DashboardListFolderOptions,
+.DashboardListBookmarkOptions {
+  display: flex;
+  cursor: pointer;
+}
+.dashboardListBookmarkContentDetails {
+  display: flex;
+}
+.DashboardListFolderContentDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.dashboardBreadcrumb {
+  margin: 10px 0 20px 0;
+  padding: 0;
+}
+
+.dashboardBreadcrumbList {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.dashboardBreadcrumbItem {
+  display: flex;
+  align-items: center;
+}
+
+.dashboardBreadHomeIcon {
+  width: 23px;
+  height: 23px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.dashboardBreadHomeArrow {
+  width: 8px;
+  height: 8px;
+  margin: 0 5px;
+  flex-shrink: 0;
+}
+
+.dashboardBreadcrumbText {
+  font-family: 'Poppins', sans-serif;
+  color: #034AA6;
+  font-size: 14px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.dashboardBreadcrumbText:hover,
+.dashboardBreadcrumbText:focus {
+  color: #023875;
+  outline: none;
+}
+
+.dashboardBreadcrumbDetailHolder {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.dashboardNoFavorite {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px auto
+}
+
+.dashboardCollectionSectionEmpty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px auto;
+  color: #666;
+  font-size: 16px;
+  margin: 20px 0;
+}
+.dashboardSectionMeetingsCardContents,
+.dashboardSectionMeetingsCardContentsDark {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  padding: 10px;
+}
+.dashboardSectionMeetingsCardTitle,
+.dashboardSectionMeetingsCardDescription,
+.dashboardSectionMeetingsListTitle,
+.dashboardSectionMeetingsListDescription {
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+.dashboardSectionMeetingsCardTitle,
+.dashboardSectionMeetingsListTitle {
+  font-size: 14px;
+}
+.dashboardSectionMeetingsCardDescription,
+.dashboardSectionMeetingsListDescription {
+  font-size: 12px;
+  margin-top: -8px;
+}
+.dashboardSectionMeetingsListTitle {
+  text-align: center;
+  /* font-size: 12px */
+}
+.dashboardSectionMeetingsListDescription {
+  padding: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .dashboardBreadcrumbText {
+    font-size: 12px;
+  }
+
+  .dashboardBreadHomeIcon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .dashboardBreadHomeArrow {
+    width: 6px;
+    height: 6px;
+  }
+}
+
+@keyframes dashboardSection {
+  0% {
+    transform: translateX(-50%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes dashboardFilterModalSlideIn {
+  0% {
+    transform: translateY(30%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

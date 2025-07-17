@@ -1,0 +1,233 @@
+.onboardingModal,
+.onboardingModalDark {
+  display: block;
+  position: absolute;
+  padding: 3px 10px;
+  min-width: 180px;
+  box-shadow: rgba(99, 99, 99, 0.1) 0px 2px 8px 0px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  border-radius: 7px;
+  animation: onboardingModalSlideIn 0.6s ease-in-out;
+  margin-bottom: 30px;
+}
+
+.onboardingModal {
+    background-color: #e7e2e2;
+}
+.onboardingModalDark {
+    background-color: rgb(53, 51, 51);
+}
+
+.topRight::before,
+.topRightDark::before {
+  content: '';
+  position: absolute;
+  top: -10px; 
+  right: 10px; 
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 10px 10px 10px; 
+  z-index: 10001;
+}
+
+.topRight::before {
+    border-color: transparent transparent #e7e2e2 transparent;
+}
+
+.topRightDark::before {
+    border-color: transparent transparent rgb(53, 51, 51) transparent;
+}
+
+.topCenter::before,
+.topCenterDark::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 10px 10px 10px;
+  z-index: 10001;
+}
+
+.topCenter::before {
+  border-color: transparent transparent #e7e2e2 transparent;
+}
+
+.topCenterDark::before {
+  border-color: transparent transparent rgb(53, 51, 51) transparent;
+}
+
+.topLeft::before,
+.topLeftDark::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 10px 10px 10px;
+  z-index: 10001;
+}
+
+.topLeft::before {
+  border-color: transparent transparent #e7e2e2 transparent;
+}
+
+.topLeftDark::before {
+  border-color: transparent transparent rgb(53, 51, 51) transparent;
+}
+
+.bottomCenter::before,
+.bottomCenterDark::before {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%; 
+  transform: translateX(-50%); 
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 10px 0 10px;
+  z-index: 10001;
+}
+
+.bottomCenter::before {
+  border-color: #e7e2e2 transparent transparent transparent;
+}
+
+.bottomCenterDark::before {
+  border-color: rgb(53, 51, 51) transparent transparent transparent;
+}
+
+.bottomRight::before,
+.bottomRightDark::before {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 10px 0 10px;
+  z-index: 10001;
+}
+
+.bottomRight::before {
+  border-color: #e7e2e2 transparent transparent transparent; 
+}
+
+.bottomRightDark::before {
+  border-color: rgb(53, 51, 51) transparent transparent transparent;
+}
+
+.onboardingModalContent {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+.onboardingDetails {
+    display: flex;
+    font-size: 12px;
+}
+.onboardAction {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+.onboardingBtnSkip,
+.onboardingBtnPrevious,
+.onboardingBtnNext {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    font-weight: 500;
+    border: none;
+    border-radius: 8px;
+    padding: 9px;
+    cursor: pointer;
+}
+.onboardingBtnNext {
+    background: linear-gradient(180deg, #00ccff 0%, #034aa6 100%);
+    transition: transform 0.3s ease;
+    color: white;
+}
+.onboardingBtnSkip {
+    background: brown;
+    transition: transform 0.3s ease;
+    color: white;
+}
+.onboardingBtnPrevious {
+    background: #034aa6;
+    transition: transform 0.3s ease;
+    color: white;
+}
+.onboardingBtnPreviousExtra {
+    cursor: not-allowed;
+    background: #7ea1ce;
+}
+.onboardingBtnNextExtra {
+    cursor: not-allowed;
+    background: linear-gradient(180deg, #92c6d3 0%, #4c627e 100%);
+}
+
+.onboardingVideoContainer {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  max-width: 800px;
+  max-height: 600px;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.onboardingVideoModalContent {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.onboardingVideoCloseBtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(255, 255, 255, 0.7);
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  z-index: 9999;
+}
+
+#onboardingVideo {
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes onboardingModalSlideIn {
+    0% {
+      transform: translate(-50%, 50%);
+      opacity: 0;
+    }
+    100% {
+      transform: translate(-50%, -50%);
+      opacity: 1;
+    }
+}

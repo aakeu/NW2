@@ -1,0 +1,36 @@
+// {
+//   "compilerOptions": {
+//     "target": "es6",
+//     "module": "esnext",
+//     "jsx": "react-jsx",
+//     "strict": true,
+//     "esModuleInterop": true,
+//     "skipLibCheck": true,
+//     "forceConsistentCasingInFileNames": true,
+//     "outDir": "./dist/",
+//     "rootDir": "./src/",
+//     "moduleResolution": "node",
+//     "types": ["node", "chrome"]
+//   },
+//   "include": ["src/**/*"],
+//   "exclude": ["node_modules"]
+// }
+
+{
+  "compilerOptions": {
+    "target": "es2020",
+    "module": "esnext",
+    "jsx": "react-jsx",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "./dist/",
+    "rootDir": "./src/",
+    "moduleResolution": "node",
+    "lib": ["DOM", "ESNext"], // Added DOM for React and browser APIs, ESNext for modern JS
+    "types": ["node", "chrome", "@types/react", "@types/react-dom"] //
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
+}

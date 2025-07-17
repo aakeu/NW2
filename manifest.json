@@ -1,0 +1,82 @@
+{
+  "manifest_version": 3,
+  "name": "QuickSearchPlus",
+  "description": "Meet your AI-powered productivity assistant – search faster, stay private, and organize smarter.",
+  "version": "1.2.16",
+  "oauth2": {
+    "client_id": "755964028322-7amtoisdumllmt7obkkn5gvfs41092rj.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/userinfo.email",
+      "https://www.googleapis.com/auth/userinfo.profile"
+    ]
+  },
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "storage",
+    "bookmarks",
+    "identity",
+    "sidePanel",
+    "tabCapture",
+    "unlimitedStorage",
+    "scripting",
+    "notifications",
+    "offscreen",
+    "favicon",
+    "clipboardWrite",
+    "downloads"
+  ],
+  "host_permissions": [
+    "*://meet.google.com/*",
+    "*://*.zoom.us/*",
+    "*://teams.microsoft.com/*",
+    "https://quicksearchserver-8ee1999baeab.herokuapp.com/*",
+    "http://localhost:3000/api/*",
+    "https://api.assemblyai.com/*",
+    "https://api.deepseek.com/*",
+    "https://api.openai.com/*",
+    "https://serpapi.com/*",
+    "https://api.stripe.com/*",
+    "https://api.paystack.co/*",
+    "https://www.youtube.com/*",
+    "https://*.google.com/*",
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background/background.js"
+  },
+  "action": {
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    },
+    "default_popup": "popup.html",
+    "default_title": "Open Side Panel"
+  },
+  "side_panel": {
+    "default_path": "sidebar.html"
+  },
+  "options_page": "settings.html",
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'; frame-src https://www.youtube.com/ https://www.youtube.com/embed/*"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://meet.google.com/*", "*://*.zoom.us/*", "*://teams.microsoft.com/*"],
+      "js": ["content/script.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["popup/popup.js", "offscreen/recorder.html", "sidebar/index.js", "images/quicksearchIcon.svg"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

@@ -1,0 +1,160 @@
+.chatModelSelectionContainer {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 2vh;
+    /* overflow: visible; */
+}
+
+.chatAIModel, .chatAIModelLight {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+.chatAIModel {
+    background-color: rgb(32, 31, 31);
+    height: inherit;
+}
+.chatAIModelLight {
+    background-color: rgb(224, 231, 236);
+    height: inherit;
+}
+
+.imageHeight {
+    height: inherit;
+}
+
+.chatAIModelText {
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.chatAIModalList {
+    position: absolute;
+    bottom: 150%;
+    top: auto;
+    padding: 10px;
+    background-color: rgb(224, 231, 236);
+    border-radius: 10px;
+    max-height: 330px;
+    overflow-y: auto;
+    /* overflow-x: hidden; */
+    z-index: 20;
+
+    &::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: rgb(224, 231, 236);
+        border-radius: 8px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 6px;
+        border: 1px solid rgb(167, 198, 224);
+    }
+
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.3) rgb(224, 231, 236);
+}
+
+.chatAIModalList.chatAIModalListDark {
+    background-color: rgb(32, 31, 31);
+    &::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: rgb(32, 31, 31);
+        border-radius: 8px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 6px;
+        border: 1px solid rgb(32, 31, 31);
+    }
+
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.3) rgb(32, 31, 31);
+}
+
+.chatAIModelItem {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 180px;
+    max-width: 180px;
+    cursor: pointer;
+}
+.chatAIModelItemHolder {
+    display: flex;
+    position: relative;
+    gap: 5px;
+    align-items: center;
+}
+.chatAIModelImage {
+    height: 30px;
+}
+.chatAIModelItemHolder:hover {
+    background-color: rgba(128, 125, 125, 0.1);
+    border-radius: 6px;
+}
+.chatAIModelName {
+    font-size: 12px;
+    font-weight: 500;
+    padding: 10px;
+}
+.chatAIModelItemDescription {
+  display: block;
+  width: 30dvw;
+  max-height: 160px;
+  overflow-y:auto;
+  background: #034aa6;
+  position: absolute;
+  top: 0;
+  left: 20%;
+  z-index: 9999;
+  border-radius: 7px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  padding: 2px;
+  transition: opacity 0.3s ease-in-out;
+
+   &::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: #034aa6;
+        border-radius: 8px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 6px;
+        border: 1px solid rgb(167, 198, 224);
+    }
+
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.3) #034aa6;
+}
+
+.chatAIModelDescriptionText {
+    font-size: 12px;
+    color: white;
+    font-weight: 400;
+    padding: 5px;
+}
+
+@media (min-width: 768px) {
+    .chatAIModelItemDescription {
+        left: 90%;
+    }
+}

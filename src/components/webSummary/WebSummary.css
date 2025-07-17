@@ -1,0 +1,51 @@
+.webSummary {
+  display: block;
+  position: absolute;
+  margin-top: 15px;
+  left: -30px;
+  background-color: skyblue;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  border-radius: 6px;
+  padding: 20px;
+  width: 230px;
+  max-width: 300px;
+  height: 120px;
+  max-height: 120px;
+  overflow-y: auto;
+  z-index: 9999;
+}
+.webSummary::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: 9px;
+  border-width: 0 10px 10px 10px;
+  border-style: solid;
+  border-color: transparent transparent white transparent;
+  z-index: 1000;
+}
+.webSummaryHolder {
+  display: flex;
+  flex-direction: column;
+}
+.webSummaryCaption {
+  display: flex;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 7px;
+  color: black;
+}
+.webSummaryDesc {
+  display: flex;
+  /* text-align: justify; */
+  font-size: 12px;
+  color: black;
+}
+.websummaryLoading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px auto;
+  color: black;
+}

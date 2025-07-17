@@ -1,0 +1,388 @@
+.interaction-sender {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  margin-bottom: 12px;
+}
+
+.interaction-sender .sender {
+  max-width: 85%;
+  border-radius: 8px;
+  color: white;
+  padding: 12px;
+  font-size: 14px;
+  background-color: #034aa6;
+}
+
+.interaction-sender .sender.dark {
+  background-color: #222121;
+}
+
+.interaction-response-container {
+  width: 100%;
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
+  justify-content: start;
+  margin-bottom: 16px;
+}
+
+.response-loader {
+  display: flex;
+  padding: 12px;
+  gap: 4px;
+  width: 20%;
+  border-radius: 12px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background-color: black;
+}
+
+.dot.dark {
+  background-color: white;
+}
+
+.animate-wave-1 {
+  animation: wave 1.2s infinite ease-in-out;
+  animation-delay: 0s;
+}
+
+.animate-wave-2 {
+  animation: wave 1.2s infinite ease-in-out;
+  animation-delay: 0.2s;
+}
+
+.animate-wave-3 {
+  animation: wave 1.2s infinite ease-in-out;
+  animation-delay: 0.4s;
+}
+
+.interaction-response-container .response {
+  max-width: 100%;
+  border-radius: 8px;
+  padding: 16px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f9f9f9;
+  overflow-wrap: break-word;
+}
+
+.interaction-response-container .response.dark {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+}
+
+/* Perplexity-specific styles */
+.response .response-container {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.response h2.section-header {
+  font-size: 1.5em;
+  font-weight: 600;
+  margin: 1.2em 0 0.6em;
+  color: #034aa6;
+  border-bottom: 1px solid #034aa6;
+  padding-bottom: 4px;
+}
+
+.response h2.section-header.dark {
+  color: #4da8ff;
+  border-bottom-color: #4da8ff;
+}
+
+.response p.text-content {
+  font-size: 1em;
+  margin: 0.8em 0;
+  color: #444;
+}
+
+.response p.text-content.dark {
+  color: #c0c0c0;
+}
+
+.response ul.unordered-list,
+.response ol.ordered-list {
+  margin: 1em 0;
+  padding-left: 1.5em;
+  list-style-position: outside;
+}
+
+.response ul.unordered-list li,
+.response ol.ordered-list li {
+  margin: 0.5em 0;
+  font-size: 1em;
+  line-height: 1.5;
+  padding-left: 0.5em;
+}
+
+.response ul.unordered-list li::marker {
+  color: #034aa6;
+}
+
+.response ul.unordered-list li.dark::marker {
+  color: #4da8ff;
+}
+
+.response strong {
+  font-weight: 700;
+  color: #034aa6;
+}
+
+.response strong.dark {
+  color: #4da8ff;
+}
+
+.response pre.code-block {
+  background-color: #1e1e1e;
+  color: #ffffff;
+  padding: 12px;
+  border-radius: 6px;
+  overflow-x: auto;
+  font-family: 'Fira Code', 'Consolas', monospace;
+  font-size: 0.9em;
+  margin: 1em 0;
+  position: relative;
+}
+
+.response table.table-content {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1em 0;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+}
+
+.response table.table-content.dark {
+  background-color: #2a2a2a;
+  border-color: #444;
+}
+
+.response th.table-header {
+  background-color: #034aa6;
+  color: #ffffff;
+  padding: 8px;
+  text-align: left;
+  font-weight: 600;
+}
+
+.response th.table-header.dark {
+  background-color: #4da8ff;
+}
+
+.response td.table-cell {
+  padding: 8px;
+  border: 1px solid #ddd;
+}
+
+.response td.table-cell.dark {
+  border-color: #444;
+  color: #c0c0c0;
+}
+
+.response .citations {
+  margin-top: 1.5em;
+  padding: 12px;
+  background-color: #e8f4f8;
+  border-left: 4px solid #034aa6;
+  border-radius: 4px;
+}
+
+.response .citations.dark {
+  background-color: #2a3c4a;
+  border-left-color: #4da8ff;
+}
+
+.response a.citation-link {
+  color: #034aa6;
+  text-decoration: none;
+}
+
+.response a.citation-link.dark {
+  color: #4da8ff;
+}
+
+.response a.citation-link:hover {
+  text-decoration: underline;
+}
+
+.response em {
+  font-style: italic;
+}
+
+.res-icons-container {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 8px 12px;
+}
+
+.response-ri {
+  font-size: 3.2vw;
+}
+
+@media (min-width: 640px) {
+  .response-ri {
+    font-size: 2vw;
+  }
+}
+
+@media (min-width: 768px) {
+  .response-loader {
+    width: 12%;
+  }
+  .response-ri {
+    font-size: 1.7vw;
+  }
+}
+
+@media (min-width: 1024px) {
+  .response-ri {
+    font-size: 1.2vw;
+  }
+}
+
+@media (min-width: 1280px) {
+  .response-ri {
+    font-size: 1vw;
+  }
+}
+
+@keyframes wave {
+  0%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-5px);
+  }
+}
+
+
+/* .interaction-sender {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+.interaction-sender .sender {
+    max-width: 85%;
+    border-radius: 8px;
+    color: white;
+    padding: 12px;
+    font-size: small;
+    background-color: #034aa6;
+}
+
+.interaction-sender .sender.dark {
+    background-color: #222121;
+}
+
+.interaction-response-container {
+    width: 100%;
+    display: flex;
+    gap: 2px;
+    flex-direction: column;
+    justify-content: start;
+
+}
+
+.response-loader {
+    display: flex;
+    padding: 12px;
+    gap: 4px;
+    width: 20%;
+    border-radius: 12px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 9999px;
+    background-color: black;
+}
+
+.dot.dark {
+    background-color: white;
+}
+
+.animate-wave-1 {
+    animation: wave 1.2s infinite ease-in-out;
+    animation-delay: 0s;
+}
+
+.animate-wave-2 {
+    animation: wave 1.2s infinite ease-in-out;
+    animation-delay: 0.2s;
+}
+
+.animate-wave-3 {
+    animation: wave 1.2s infinite ease-in-out;
+    animation-delay: 0.4s;
+}
+
+.interaction-response-container .response {
+    max-width: 100%;
+    border-radius: 8px;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-bottom: 8px;
+    font-size: small;
+    overflow-wrap: break-word;
+}
+
+.res-icons-container {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.response-ri {
+    font-size: 3.2vw;
+}
+
+@media (min-width: 640px) {
+    .response-ri {
+        font-size: 2vw;
+    }
+}
+
+@media (min-width: 768px){
+    .response-loader {
+        width: 12%;
+    }
+
+    .response-ri {
+        font-size: 1.7vw;
+    }
+}
+
+@media (min-width: 1024px){
+    .response-ri {
+        font-size: 1.2vw;
+    }
+}
+
+@media (min-width: 1280){
+    .response-ri {
+        font-size: 1vw;
+    }
+}
+
+@keyframes wave {
+    0%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-5px);
+    }
+} */

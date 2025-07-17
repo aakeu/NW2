@@ -1,0 +1,200 @@
+.folderSelectHolder,
+.folderSelectHolderDark {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  outline: 1px solid #034aa6;
+  padding: 6px 6px 6px 8px;
+  border-radius: 6px;
+  width: 170px;
+  height: 30px;
+  margin-top: 6px;
+  cursor: pointer;
+}
+.folderSelectHolder {
+  background-color: white;
+}
+.folderSelectHolderDark {
+  background-color: #1b2126;
+}
+.folderSelectHolderMgLeft {
+  margin-left: auto;
+}
+.folderSelectContentArrow {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.selectedFolder {
+  font-size: 13px;
+  color: #1b2126;
+  font-weight: 500;
+}
+.selectedFolderDark {
+  font-size: 13px;
+  color: #f0f7fb;
+  font-weight: 500;
+}
+.arrowUp {
+  width: 14px;
+  height: 14px;
+  cursor: pointer;
+  z-index: 9999
+}
+
+.folderContentsHolder,
+.folderContentsHolderOnTop {
+  display: block;
+  position: absolute;
+  width: 180px;
+  height: 150px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #b0b0b0 #f0f0f0;
+  border-radius: 6px;
+  padding: 6px;
+  margin-top: 35px;
+  right: 0;
+  z-index: 9999;
+  box-shadow: rgba(99, 99, 99, 0.1) 0px 2px 8px 0px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  animation: folderContentsSlideIn 0.6s ease-in-out;
+}
+
+.folderContentsHolderOnTop {
+  margin-top: -185px;
+  animation: folderContentsPlacedOnTopSlideIn 0.6s ease-in-out;
+}
+
+.folderContentsHolderDark,
+.folderContentsHolderOnTopDark {
+  display: block;
+  position: absolute;
+  width: 180px;
+  height: 150px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #888 #1b2126;
+  border-radius: 6px;
+  padding: 6px;
+  margin-top: 35px;
+  right: 0;
+  z-index: 9999;
+  box-shadow: rgba(99, 99, 99, 0.1) 0px 2px 8px 0px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  animation: folderContentsSlideIn 0.6s ease-in-out;
+}
+
+.folderContentsHolderOnTopDark {
+  margin-top: -185px;
+  animation: folderContentsPlacedOnTopSlideIn 0.6s ease-in-out;
+}
+
+.folderContentsHolder::-webkit-scrollbar,
+.folderContentsHolderOnTop::-webkit-scrollbar {
+  width: 4px;
+}
+
+.folderContentsHolder::-webkit-scrollbar-track,
+.folderContentsHolderOnTop::-webkit-scrollbar-track {
+  background: #f0f0f0;
+}
+
+.folderContentsHolder::-webkit-scrollbar-thumb,
+.folderContentsHolderOnTop::-webkit-scrollbar-thumb {
+  background: #b0b0b0;
+  border-radius: 4px;
+}
+
+.folderContentsHolder::-webkit-scrollbar-thumb:hover,
+.folderContentsHolderOnTop::-webkit-scrollbar-thumb:hover {
+  background: #909090;
+}
+
+.folderContentsHolderDark::-webkit-scrollbar,
+.folderContentsHolderOnTopDark::-webkit-scrollbar {
+  width: 4px;
+}
+
+.folderContentsHolderDark::-webkit-scrollbar-track,
+.folderContentsHolderOnTopDark::-webkit-scrollbar-track {
+  background: #1b2126;
+}
+
+.folderContentsHolderDark::-webkit-scrollbar-thumb,
+.folderContentsHolderOnTopDark::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.folderContentsHolderDark::-webkit-scrollbar-thumb:hover,
+.folderContentsHolderOnTopDark::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.folderContentsContainer {
+  height: 100%;
+  overflow-y: inherit;
+}
+
+.folderContentsHolder {
+  background-color: white;
+}
+.folderContentsHolderDark {
+  background-color: #1b2126;
+}
+
+.folderContentsHolderOnTop {
+  background-color: white;
+}
+.folderContentsHolderOnTopDark {
+  background-color: #1b2126;
+}
+
+.folderContentsContainer {
+  display: flex;
+  flex-direction: column;
+}
+.folderContentName {
+  display: flex;
+  font-size: 10px;
+  color: #9fa9b2;
+  font-weight: 400;
+  padding: 7px;
+  /* width: 100%; */
+  cursor: pointer;
+}
+.folderContentNameExtra {
+  background-color: #f0f7fb;
+  transition: background-color 0.5s;
+  color: #034aa6;
+  font-weight: 500;
+}
+.folderContentName:hover {
+  background-color: #f0f7fb;
+  transition: background-color 0.5s;
+  color: #034aa6;
+  font-weight: 500;
+}
+
+@keyframes folderContentsSlideIn {
+  0% {
+    transform: translateY(30%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes folderContentsPlacedOnTopSlideIn {
+  0% {
+    transform: translateY(30%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

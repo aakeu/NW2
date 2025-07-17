@@ -1,0 +1,82 @@
+.paymentModal {
+  display: block;
+  position: absolute;
+  top: 30%;
+  left: 30%;
+  background-color: white;
+  box-shadow: rgba(99, 99, 99, 0.1) 0px 2px 8px 0px;
+  border-radius: 6px;
+  transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+  color: black;
+  transition: color 0.3s;
+  width: 250px;
+  animation: paymentModalSideIn 0.6s ease-in-out;
+  z-index: 9999;
+  padding: 20px;
+}
+.paymentModalContent {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  gap: 20px;
+}
+.paymentModalHeading {
+  display: flex;
+  font-family: Poppins;
+  font-size: 14px;
+  /* text-align: justify; */
+  color: black;
+}
+.paymentModalBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, #00ccff 0%, #034aa6 100%);
+  transition: transform 0.3s ease;
+  gap: 5px;
+  color: white;
+  font-size: 12px;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  cursor: pointer;
+}
+.paymentIcon {
+  width: 40px;
+  height: 40px;
+}
+.paymentBtnArrow {
+  width: 20px;
+  height: 20px;
+}
+.paymentModalClose {
+  display: block;
+  position: absolute;
+  top: -30px;
+  right: 10px;
+  font-family: Poppins;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 14.65px;
+  letter-spacing: -0.02em;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: blue;
+  cursor: pointer;
+  background-color: white;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+@keyframes paymentModalSideIn {
+  0% {
+    transform: translateX(-20%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

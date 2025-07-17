@@ -1,0 +1,46 @@
+.newchat-container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    padding-top: 32px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border-radius: 8px;
+    height: 8vh;
+    background-color: #f6f6f7;
+}
+
+.container:hover {
+    background-color: #034aa6;
+    color: white;
+}
+
+.container.dark {
+    background-color: #222121;
+}
+
+.container.dark:hover {
+    background-color: #2f2f2f;
+}
+
+.text {
+    font-size: small;
+}
+
+@media (min-width: 768px){
+    .container {
+        width: 48%;
+    }
+}

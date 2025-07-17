@@ -1,0 +1,451 @@
+.loginModal,
+.loginModalDark {
+  display: block;
+  position: fixed; 
+  left: 50%;
+  top: 6%;
+  transform: translateX(-50%);
+  width: min(70vw, 800px);
+  max-height: 500px;
+  min-width: 270px;
+  padding: 10px 30px;
+  border-radius: 7px;
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  overflow-y: auto; 
+  animation: loginModalSlideIn 0.6s ease-in-out;
+  scrollbar-width: none;
+  z-index: 1000; 
+}
+
+.loginModal::-webkit-scrollbar,
+.loginModalDark::-webkit-scrollbar {
+  display: none;
+}
+
+.loginModal > *,
+.loginModalDark > * {
+  position: relative;
+  z-index: 1;
+}
+.verifyAccount,
+.verifyAccountDark {
+  display: block;
+  position: absolute;
+  left: 45%;
+  top: 10%;
+  transform: translateX(-50%);
+  width: min(70vw, 800px);
+  min-width: 270px;
+  padding: 10px 30px;
+  border-radius: 7px;
+  animation: loginModalSlideIn 0.6s ease-in-out;
+}
+.loginModal {
+  background-color: #ffffff;
+  box-shadow: rgba(99, 99, 99, 0.1) 0px 2px 8px 0px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+.verifyAccount {
+  background-color: #ccc9c9;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 2px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+.loginModalDark {
+  background-color: rgb(34, 33, 33);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 2px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  color: white;
+}
+.verifyAccountDark {
+  background-color: rgb(70, 68, 68);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 2px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  color: white;
+}
+.loginModalCloseIcon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.loginModalHeaderDark {
+  font-size: 18px;
+  font-weight: 600;
+  color: #c5c1c1;
+}
+.verifyAccountWelcome {
+  font-size: 18px;
+  font-weight: 600;
+  color: black
+}
+.verifyAccountWelcomeDark {
+  font-size: 18px;
+  font-weight: 600;
+  color: white
+}
+.loginModalHeader {
+  font-size: 18px;
+  font-weight: 600;
+  color: #202020;
+}
+.loginModalSubHeaderDark {
+  font-size: 14px;
+  font-weight: 500;
+  color: #c5c1c1;
+}
+.loginModalSubHeader {
+  font-size: 14px;
+  font-weight: 500;
+  color: #202020;
+}
+.loginModalEmailHolder,
+.loginModalPasswordHolder,
+.loginModalConfirmPasswordHolder,
+.loginModalNameHolder {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.loginModalPasswordHolder,
+.loginModalConfirmPasswordHolder {
+  margin-top: 5px;
+  position: relative;
+}
+.loginModalConfirmPasswordHolder {
+  margin-top: -5px;
+}
+.loginModalEmailText,
+.loginModalPasswordText,
+.loginModalConfirmPasswordText,
+.loginModalNameText {
+  font-family: Poppins;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 1px;
+  text-align: left;
+  color: #c7c7c7;
+  margin-top: 6px;
+}
+.loginModalEmailInput,
+.loginModalNameInput,
+.loginModalNameInputDark,
+.loginModalEmailInputDark {
+  display: flex;
+  padding: 7px;
+  border-radius: 7px;
+  border: none;
+  outline: none;
+}
+.loginModalNameInput,
+.loginModalEmailInput {
+  background-color: #f5f5f5;
+}
+.loginModalNameInputDark,
+.loginModalEmailInputDark {
+  background-color: rgb(34, 33, 33);
+  color: #c5c1c1;
+  border: 1px solid #c5c1c1;
+}
+.loginModalEmailInput::placeholder,
+.loginModalNameInput::placeholder {
+  font-size: 11px;
+}
+.loginModalNameInputDark::placeholder,
+.loginModalEmailInputDark::placeholder {
+  font-size: 11px;
+  color: #c5c1c1;
+}
+.loginModalPasswordInput,
+.loginModalConfirmPasswordInput,
+.loginModalPasswordInputDark,
+.loginModalConfirmPasswordInputDark {
+  display: flex;
+  padding: 7px;
+  border-radius: 7px;
+  border: 2px solid #034aa6;
+  outline: #034aa6;
+}
+.loginModalPasswordInput,
+.loginModalConfirmPasswordInput {
+  background-color: #ffffff;
+}
+.loginModalPasswordInputDark,
+.loginModalConfirmPasswordInputDark {
+  border: 1px solid #c5c1c1;
+  background-color: rgb(34, 33, 33);
+  color: #c5c1c1;
+}
+.loginModalPasswordInput::placeholder,
+.loginModalConfirmPasswordInput::placeholder {
+  font-size: 14px;
+  color: #202020;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+.loginModalPasswordInputDark::placeholder,
+.loginModalConfirmPasswordInputDark::placeholder {
+  font-size: 14px;
+  color: #c5c1c1;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+.passwordEye,
+.confirmPasswordEye {
+  display: block;
+  position: absolute;
+  margin-top: 37px;
+  right: 6px;
+  width: 15px;
+  height: 15px;
+  z-index: 9999;
+  cursor: pointer;
+}
+.loginModalSigninBtn,
+.loginModalCreateAccount {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, #00ccff 0%, #034aa6 100%);
+  box-shadow: 0px 4px 8px 0px #034aa61f;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease, background-color 0.3s, box-shadow 0.3s;
+  gap: 5px;
+  width: 100%;
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  padding: 0px 8px;
+  margin-top: 20px;
+  cursor: pointer;
+  padding: 8px;
+}
+.loginModalCreateAccount {
+  background: linear-gradient(0deg, rgb(0, 163, 204), rgb(0, 163, 204)),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+  margin-top: 0px;
+  margin-bottom: 6px;
+  font-size: 10px;
+  padding: 10px;
+}
+.loginModalSigninBtnExtra {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #d1d5db, #d1d5db);
+  box-shadow: 0px 4px 8px 0px #034aa61f;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease, background-color 0.3s, box-shadow 0.3s;
+  gap: 5px;
+  width: 100%;
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  padding: 0px 8px;
+  margin-top: 20px;
+  /* cursor: pointer; */
+  padding: 8px;
+}
+.loginModalForgotPassReset {
+  display: flex;
+  font-size: 12px;
+  font-weight: 400;
+  color: #202020;
+  margin-top: 9px;
+}
+.loginModalForgotPassResetDark {
+  display: flex;
+  font-size: 12px;
+  font-weight: 400;
+  color: #c5c1c1;
+  margin-top: 9px;
+}
+.loginModalReset {
+  display: flex;
+  font-size: 12px;
+  color: #034aa6;
+  font-weight: 700;
+  cursor: pointer;
+  margin-left: 3px;
+}
+.loginModalOr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px auto;
+  color: #202020;
+  font-weight: 700;
+  font-size: 11px;
+}
+.loginModalOrDark {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px auto;
+  color: #c5c1c1;
+  font-weight: 700;
+  font-size: 11px;
+}
+.loginModalSignWithGoogle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #202020;
+  font-weight: 500;
+  margin: 5px auto;
+  font-size: 12px;
+}
+.loginModalSignWithGoogleDark {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #c5c1c1;
+  font-weight: 500;
+  margin: 5px auto;
+  font-size: 12px;
+}
+.loginModalSigninWithGoogleBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 0px auto 8px auto;
+  width: 110px;
+  height: 35px;
+  border-radius: 6px;
+  border-top: 2px solid #00ccff;
+  border-right: 2px solid #034aa6;
+  border-left: 2px solid rgb(1, 144, 214);
+  border-bottom: 2px solid #202020;
+  color: #034aa6;
+  font-weight: 600;
+  text-transform: uppercase;
+  background-color: #ffffff;
+  cursor: pointer;
+  padding: 5px 0px;
+  font-size: 11px;
+}
+.loginModalSigninWithGoogleBtnAuth {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 0px auto 8px auto;
+  width: 110px;
+  height: 35px;
+  border-radius: 6px;
+  background: linear-gradient(to right, #d1d5db, #d1d5db);
+  box-shadow: 0px 4px 8px 0px #034aa61f;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease, background-color 0.3s, box-shadow 0.3s;
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 5px 0px;
+  font-size: 11px;
+}
+.loginModalGoogleIcon {
+  width: 24px;
+  height: 24px;
+}
+.loginModalNoAccount {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 4px auto;
+  font-size: 12px;
+  font-weight: 400;
+  color: #202020;
+}
+.loginModalNoAccountDark {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 4px auto;
+  font-size: 12px;
+  font-weight: 400;
+  color: #c5c1c1;
+}
+.loginModalAlreadyHaveAccount {
+  display: flex;
+  margin: 4px;
+  font-size: 12px;
+  font-weight: 400;
+  color: #202020;
+}
+.loginModalAlreadyHaveAccountDark {
+  display: flex;
+  margin: 4px;
+  font-size: 12px;
+  font-weight: 400;
+  color: #c5c1c1;
+}
+.verifyAccountDetail {
+  font-family: Open Sans;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 14pxx;
+  text-align: left;
+}
+.checkmarkImg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  margin: 1px auto 10px auto;
+}
+
+@keyframes loginModalSlideIn {
+  0% {
+    transform: translate(-50%, -100%);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+}
+
+.loginModalNameErrorHolder,
+.loginModalEmailErrorHolder,
+.loginModalPasswordErrorHolder,
+.loginModalConfirmPasswordErrorHolder {
+  display: flex;
+  flex-direction: column;
+}
+.loginModalNameError,
+.loginModalEmailError,
+.loginModalPasswordError,
+.loginModalConfirmPasswordError {
+  color: red;
+  font-size: 12px;
+  margin-top: 7px;
+  font-style: italic;
+}
+.loginModalNameInputExtra,
+.loginModalEmailInputExtra,
+.loginModalPasswordInputExtra,
+.loginModalConfirmPasswordInputExtra {
+  border: 1px solid red;
+}
+
+.loginModalNameErrorDark,
+.loginModalEmailErrorDark,
+.loginModalPasswordErrorDark,
+.loginModalConfirmPasswordErrorDark {
+  color: red;
+  font-size: 12px;
+  margin-top: 7px;
+  font-style: italic;
+  background-color: #c5c1c1;
+  padding: 3px;
+  border-radius: 3px;
+  width: fit-content;
+}

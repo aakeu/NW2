@@ -1,0 +1,48 @@
+.chatHeaderContainer {
+    width: 100%;
+}
+
+.chatHeaderContainer .layer1 {
+    display: flex;
+    align-items: start;
+    padding-top: 12px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.chatHeaderContainer .layer2 {
+    display: flex;
+    gap: 12px;
+}
+
+.textContainer {
+    display: flex;
+    flex-direction: column;
+    column-gap: 8px;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.gpt-text {
+    font-weight: bold;
+    font-size: .8rem;
+}
+
+.gpt-text-2 {   
+    font-size: 0.65rem;
+    line-height: 1.25rem;
+    color: #a4aab5;
+}
+
+@media(min-width: 768px) {
+    .chatHeaderContainer{
+        width: 100%;
+    }
+
+    .gpt-text {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+    }
+}

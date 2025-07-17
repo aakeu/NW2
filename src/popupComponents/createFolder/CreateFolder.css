@@ -1,0 +1,144 @@
+.createFolderModal {
+  display: block;
+  position: absolute;
+  width: 300px;
+  background-color: #ffffff;
+  padding: 10px 30px;
+  box-shadow: rgba(99, 99, 99, 0.1) 0px 2px 8px 0px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  top: 90px;
+  left: 170px;
+  z-index: 10000;
+  border-radius: 7px;
+  animation: createFolderModalSlideIn 0.6s ease-in-out;
+}
+.createFolderModalContainer {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20px;
+}
+.createFolderModalClose {
+  display: flex;
+  margin-left: auto;
+  width: 14px;
+  height: 14px;
+  cursor: pointer;
+  margin-right: -9px;
+}
+
+.createFolderHeader {
+  display: flex;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: Poppins;
+}
+.createFolderWantSubfolder {
+  display: flex;
+  margin-left: auto;
+  font-size: 14px;
+  font-weight: 500;
+  color: #034aa6;
+  font-style: italic;
+  margin-top: -4px;
+  cursor: pointer;
+  font-family: Poppins;
+}
+
+.createFolderNameErrorHolder,
+.createFolderParentFolderNameErrorHolder {
+  display: flex;
+  flex-direction: column;
+}
+.createFolderNameHolder {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.createFolderNameText {
+  font-family: Poppins;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 1px;
+  text-align: left;
+  color: #c7c7c7;
+  margin-top: 6px;
+}
+.createFolderNameInput {
+  display: flex;
+  padding: 7px;
+  border-radius: 7px;
+  background-color: #f5f5f5;
+  border: none;
+  outline: none;
+}
+.createFolderNameInput::placeholder {
+  font-size: 11px;
+}
+.createFolderParentFolderSelect {
+  display: flex;
+  width: 100%;
+  padding: 7px;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+.createFolderNameInputExtra,
+.createFolderParentFolderSelectExtra {
+  border: 1px solid red;
+}
+.createFolderNameError,
+.createFolderParentFolderError {
+  color: red;
+  font-size: 12px;
+}
+.createFolderBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, #00ccff 0%, #034aa6 100%);
+  box-shadow: 0px 4px 8px 0px #034aa61f;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease, background-color 0.3s, box-shadow 0.3s;
+  gap: 5px;
+  width: 100%;
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  padding: 0px 8px;
+  margin-top: 20px;
+  cursor: pointer;
+  padding: 8px;
+}
+.createFolderBtnExtra {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #d1d5db, #d1d5db);
+  box-shadow: 0px 4px 8px 0px #034aa61f;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease, background-color 0.3s, box-shadow 0.3s;
+  gap: 5px;
+  width: 100%;
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  padding: 0px 8px;
+  margin-top: 20px;
+  /* cursor: pointer; */
+  padding: 8px;
+}
+
+@keyframes createFolderModalSlideIn {
+  0% {
+    transform: translateX(-100%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

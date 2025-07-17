@@ -1,0 +1,980 @@
+.dashboardContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0px 10px 10px;
+  animation: dashboardSectionSlideIn 0.6s ease-in-out;
+}
+.dashboardContentContainer {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  gap: 10px;
+}
+.dashboardReminder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 7px;
+  background-color: #f27105;
+  box-shadow: rgba(99, 99, 99, 0.1) 0px 2px 8px 0px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  font-size: 10px;
+  color: white;
+  margin-top: -10px;
+  padding: 6px;
+  width: 98%;
+}
+.dashboardSidebar,
+.dashboardMain {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  box-shadow: rgba(99, 99, 99, 0.1) 0px 2px 8px 0px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  border-radius: 6px;
+}
+.dashboardMain {
+  height: 385px;
+  max-height: 385px;
+  overflow-y: auto;
+  position: relative;
+}
+.dashboardSidebar {
+  padding: 20px 10px 0px 10px;
+  height: 385px;
+  max-height: 385px;
+  overflow-y: auto;
+  position: relative;
+  overflow-x: hidden;
+}
+.dashboardMain {
+  padding: 10px;
+}
+.dashboardSidebarContent {
+  display: flex;
+  gap: 10px;
+  padding: 5px;
+  cursor: pointer;
+  margin-bottom: 5px;
+  color: #77797e;
+  font-size: 12px;
+  margin-top: 2px;
+  margin-top: 8px;
+  font-family: Plus Jakarta Sans;
+  font-size: 14.68px;
+  font-weight: 500;
+  line-height: 17.62px;
+  letter-spacing: -0.02em;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+.dashboardSidebarIcon {
+  width: 18px;
+  height: 18px;
+  margin-top: -1px;
+}
+.dashboardSidebarContent:hover {
+  background-color: #034aa6;
+  box-shadow: rgba(99, 99, 99, 0.1) 0px 2px 8px 0px;
+  border-radius: 6px;
+  transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+  color: white;
+  transition: color 0.3s;
+}
+.dashboardSidebarContentExtra {
+  display: flex;
+  gap: 10px;
+  padding: 5px;
+  cursor: pointer;
+  margin-bottom: 5px;
+  background-color: #034aa6;
+  box-shadow: rgba(99, 99, 99, 0.1) 0px 2px 8px 0px;
+  border-radius: 6px;
+  transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+  color: white;
+  font-size: 12px;
+  margin-top: 8px;
+  font-family: Plus Jakarta Sans;
+  font-size: 14.68px;
+  font-weight: 500;
+  line-height: 17.62px;
+  letter-spacing: -0.02em;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+
+.dashboardMainHeader {
+  display: flex;
+  justify-content: space-between;
+}
+.dashboardMainHeaderSearchContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.dashboardHeaderName {
+  font-size: 12px;
+  font-family: Plus Jakarta Sans;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 17.62px;
+  letter-spacing: -0.02em;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  width: 79px;
+}
+.dashboardHeaderSearchHolder {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  padding: 4px;
+  border-radius: 6px;
+  background-color: #ffffff;
+  box-shadow: rgba(99, 99, 99, 0.1) 0px 2px 8px 0px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+.dashboardHeaderIconInput {
+  display: flex;
+  gap: 6px;
+}
+.dashboardHeaderIconInputImg {
+  width: 20px;
+  height: 22px;
+}
+.dashboardHeaderIconInputArea {
+  display: flex;
+  border: none;
+  font-size: 12px;
+}
+.dashboardHeaderIconInputArea:focus {
+  outline: none;
+}
+.dashboardHeaderIconInputArea::placeholder {
+  margin-top: 2px;
+  margin-top: 8px;
+  font-family: Plus Jakarta Sans;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 17.62px;
+  letter-spacing: -0.02em;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #979797;
+}
+.dashboardFilterIconImg {
+  width: 20px;
+  height: 22px;
+  cursor: pointer;
+}
+.dashboardMainHeaderCardTileContainer {
+  display: flex;
+}
+.dashboardMainHeaderNewFolderIconHolder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dashboardMainHeaderAddIcon,
+.dashboardMainHeaderCardIcon,
+.dashboardMainHeaderListIcon {
+  width: 40px;
+  height: 40px;
+  max-width: 40px;
+  max-height: 40px;
+  cursor: pointer;
+}
+.dashboardMainHeaderCardIcon,
+.dashboardMainHeaderListIcon {
+  margin-left: -8px;
+}
+.dashboardMainHeaderCardText {
+  display: flex;
+  font-size: 12px;
+  margin-top: 6px;
+  font-family: Plus Jakarta Sans;
+  font-weight: 600;
+  line-height: 17.62px;
+  letter-spacing: -0.02em;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+.dashboardMainHeaderFilterMenu {
+  display: block;
+  position: absolute;
+  top: 36px;
+  right: -20px;
+  background-color: #ffffff;
+  box-shadow: rgba(99, 99, 99, 0.1) 0px 2px 8px 0px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  padding: 6px;
+  border-radius: 5px;
+  z-index: 9999;
+  width: 65px;
+}
+.dashboardMainHeaderFilterMenuContent {
+  display: flex;
+  flex-direction: column;
+}
+.dashboardMainHeaderFilterMenuText {
+  display: flex;
+  font-size: 12px;
+  font-family: Poppins;
+  font-weight: 400;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #333333;
+  cursor: pointer;
+  padding: 0px 4px;
+}
+.dashboardMainHeaderFilterMenuText:hover {
+  background-color: #034aa6;
+  box-shadow: rgba(99, 99, 99, 0.1) 0px 2px 8px 0px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  border-radius: 5px;
+  color: white;
+}
+.dashboardSectionCollectionContainer,
+.dashboardFavoritesCardContainer,
+.dashboardImagesCardContainer,
+.dashboardSectionImageDetailContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  margin-top: 30px;
+  animation: dashboardCollectionSlideIn 0.6s ease-in-out;
+}
+.dashboardSectionCollectionFolderContainer {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  border: 1px solid #ebebeb;
+  background-color: white;
+  box-shadow: rgba(99, 99, 99, 0.1) 0px 2px 8px 0px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  padding: 10px;
+  border-radius: 7px;
+  animation: dashboardCollectionSlideIn 0.6s ease-in-out;
+}
+.dashboardSectionCollectionFolderDetailHolder {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+.dashboardSectionCollectionFolderIconHolder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #034aa6;
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+  margin-bottom: 10px;
+}
+.dashboardSectionCollectionFolderIconImg,
+.dashboardSectionImagesFolderIconImg,
+.dashboardSectionImagesFolderIconImgList {
+  width: 22px;
+  height: 22px;
+}
+.dashboardSectionCollectionFolderName,
+.dashboardSectionImagesFolderName,
+.dashboardSectionImagesFolderNameList {
+  font-family: Poppins;
+  font-size: 13.14px;
+  font-weight: 500;
+  line-height: 16.56px;
+  letter-spacing: -0.02em;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #000000;
+}
+.dashboardSectionCollectionFolderCount,
+.dashboardSectionImagesFolderCount,
+.dashboardSectionImagesFolderCountList {
+  font-family: Plus Jakarta Sans;
+  font-size: 11.63px;
+  font-weight: 400;
+  line-height: 14.65px;
+  letter-spacing: -0.02em;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #abacb0;
+}
+.dashboardSectionCollectionFolderDetailOption {
+  display: flex;
+}
+.dashboardSectionCollectionFolderOptionImg,
+.dashboardSectionBookmarkImg,
+.dashboardSectionBookmarkListImg,
+.dashboardSectionFavoriteCardImg,
+.dashboardSectionFavoriteListImg,
+.dashboardSectionCollectionFolderOptionImgList {
+  display: flex;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+.dashboardSectionFolderRenameDeleteModal,
+.dashboardSectionBookmarkDeleteModal,
+.dashboardDeleteModal {
+  display: block;
+  position: absolute;
+  top: 28px;
+  right: 28px;
+  z-index: 9999;
+  background-color: white;
+  box-shadow: rgba(99, 99, 99, 0.1) 0px 2px 8px 0px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  border-radius: 6px;
+  padding: 10px;
+}
+.dashboardSectionFolderRenameDeleteModalContent {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.dashboardSectionFolderRenameDeleteModalRename,
+.dashboardSectionFolderRenameDeleteModalDelete,
+.dashboardSectionBookmarkDeleteModalContent {
+  display: flex;
+  gap: 8px;
+  cursor: pointer;
+  padding: 5px;
+}
+.dashboardSectionFolderRenameDeleteModalRename:hover,
+.dashboardSectionFolderRenameDeleteModalDelete:hover,
+.dashboardSectionBookmarkDeleteModalContent:hover {
+  background-color: #034aa6;
+  box-shadow: rgba(99, 99, 99, 0.1) 0px 2px 8px 0px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  border-radius: 5px;
+  color: white;
+}
+.renameIconImg,
+.folderDeleteIconImg {
+  width: 14px;
+  height: 14px;
+}
+.dashboardSectionBookmarkContainer,
+.dashboardSectionFavoriteCard,
+.dashboardImagesSectionDefault {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: 6px;
+  background-color: white;
+  box-shadow: rgba(99, 99, 99, 0.1) 0px 2px 8px 0px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  border: 1px solid #ebebeb;
+  animation: dashboardCollectionSlideIn 0.6s ease-in-out;
+}
+.dashboardSectionBookmarkDetailsHolder,
+.dashboardSectionFavoriteCardDetailsHolder {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  gap: 10px;
+  cursor: pointer;
+}
+.dashboardSectionBookmarkDetailsImg,
+.dashboardSectionFavoriteCardDetailsImg {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+.dashboardSectionBookmarkDetailsText,
+.dashboardSectionFavoriteCardDetailsText {
+  font-family: Poppins;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14.65px;
+  letter-spacing: -0.02em;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #000000;
+}
+.dashboardBookmarkSource,
+.dashboardSectionFavoriteSource {
+  display: block;
+  position: absolute;
+  top: -2px;
+  left: 25px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  text-align: center;
+  color: white;
+  background-color: #034aa6;
+}
+.dashboardSectionBookmarkDeleteModalContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dashboardSectionCollectionListContainer,
+.dashboardFavoritesListContainer,
+.dashboardImagesListContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 30px;
+  animation: dashboardCollectionSlideIn 0.6s ease-in-out;
+}
+.dashboardSectionCollectionListContainer {
+  margin-top: 20px;
+}
+.dashboardSectionCollectionListDetailHolder {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  border-radius: 6px;
+  background-color: white;
+  box-shadow: rgba(99, 99, 99, 0.1) 0px 2px 8px 0px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  border: 1px solid #ebebeb;
+  padding: 5px 30px;
+}
+.dashboardSectionCollectionListFolderIconHolder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+.dashboardSectionCollectionListFolderIconImg {
+  display: flex;
+  width: 30px;
+  height: 30px;
+}
+.dashboardSectionCollectionListFolderIconHolderContent {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.dashboardSectionCollectionListFolderText,
+.dashboardSectionBookmarkListDetailContentText,
+.dashboardSectionFavoriteListDetailContentText {
+  font-family: Poppins;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 14.65px;
+  letter-spacing: -0.02em;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #000000;
+}
+.dashboardSectionCollectionListFolderCount,
+.dashboardSectionBookmarkListDetailContentUrl,
+.dashboardSectionFavoriteCardDetailContentUrl,
+.dashboardSectionFavoriteListDetailContentUrl {
+  font-family: Poppins;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14.65px;
+  letter-spacing: -0.02em;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #abacb0;
+}
+.dashboardSectionFavoriteCardDetailContentUrl {
+  margin-top: -8px;
+}
+.dashboardSectionCollectionListDetailImg {
+  display: flex;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+.dashboardSectionBookmarkListContainer,
+.dashboardSectionFavoriteListContainer,
+.dashboardImagesSectionDefaultList,
+.dashboardSectionImageDetailContentList {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  border-radius: 6px;
+  background-color: white;
+  box-shadow: rgba(99, 99, 99, 0.1) 0px 2px 8px 0px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  border: 1px solid #ebebeb;
+  padding: 5px 30px;
+}
+.dashboardSectionBookmarkListDetailHolder,
+.dashboardSectionFavoriteListDetailHolder {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+}
+.dashboardBookmarkListSource,
+.dashboardFavoriteListSource {
+  display: block;
+  position: absolute;
+  top: 1px;
+  left: -13px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  text-align: center;
+  color: white;
+  background-color: #034aa6;
+}
+.dashboardSectionBookmarkListDetailImg,
+.dashboardSectionFavoriteListDetailImg {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+.dashboardSectionBookmarkListDetailContent,
+.dashboardSectionFavoriteListDetailContent {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.dashboardCreateFolderModal,
+.dashboardRenameModal,
+.dashboardSectionDeleteModal {
+  display: block;
+  position: fixed;
+  width: 300px;
+  background-color: #ffffff;
+  padding: 30px;
+  box-shadow: rgba(99, 99, 99, 0.1) 0px 2px 8px 0px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  top: 30%;
+  left: 27%;
+  z-index: 10000;
+  border-radius: 7px;
+  animation: dashboardCreateFolderModalSlideIn 0.6s ease-in-out;
+}
+.dashboardCreateFolderModalDetails,
+.dashboardRenameModalDetails,
+.dashboardSectionDeleteModalContainer {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  gap: 10px;
+}
+.dashboardCreateFolderHeader,
+.dashboardRenameHeader,
+.dashboardSectionDeleteModalHeader {
+  display: flex;
+  font-family: Poppins;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 14.65px;
+  letter-spacing: -0.02em;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #034aa6;
+}
+.dashboardCreateFolderModalInfoHolder {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+.dashboardCreateFolderModalInfoCurrent,
+.dashboardCreateFolderModalInfoCurrentName,
+.dashboardSectionImageDetailContentName,
+.dashboardSectionImageDetailContentListName {
+  display: flex;
+  font-family: Poppins;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 14.65px;
+  letter-spacing: -0.02em;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #57627b;
+}
+.dashboardCreateFolderInput,
+.dashboardRenameInput {
+  display: flex;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #000000;
+  width: 92%;
+}
+.dashboardCreateFolderInput::placeholder,
+.dashboardRenameInput::placeholder {
+  font-size: 11px;
+  color: #77797e;
+}
+.dashboardCreateFolderModalBtnAction,
+.dashboardRenameModalBtnAction,
+.dashboardSectionDeleteModalNameBtnAction {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+.dashboardCreateFolderModalBtnCreate,
+.dashboardRenameModalBtnRename {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, #00ccff 0%, #034aa6 100%);
+  box-shadow: 0px 4px 8px 0px #034aa61f;
+  transition: transform 0.3s ease, background-color 0.3s, box-shadow 0.3s;
+  gap: 5px;
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  padding: 0px 8px;
+  cursor: pointer;
+  padding: 8px;
+}
+.dashboardCreateFolderModalBtnCreateExtra,
+.dashboardRenameModalBtnRenameExtra {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #d1d5db, #d1d5db);
+  box-shadow: 0px 4px 8px 0px #034aa61f;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease, background-color 0.3s, box-shadow 0.3s;
+  gap: 5px;
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  padding: 0px 8px;
+  padding: 8px;
+}
+.dashboardCreateFolderModalBtnCancel,
+.dashboardRenameModalBtnCancel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  border: 1px solid #034aa6;
+  gap: 5px;
+  color: #034aa6;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 8px;
+  padding: 0px 8px;
+  cursor: pointer;
+  padding: 8px;
+}
+.dashboardCreateFolderModalClose,
+.dashboardRenameModalClose {
+  display: block;
+  position: absolute;
+  top: -20px;
+  right: -12px;
+  cursor: pointer;
+}
+.dashboardSectionDeleteModalInfo {
+  display: flex;
+  font-family: Poppins;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 14.65px;
+  letter-spacing: -0.02em;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #979797;
+}
+.dashboardSectionDeleteModalName {
+  display: flex;
+  font-family: Poppins;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 14.65px;
+  letter-spacing: -0.02em;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #034aa6;
+  font-style: italic;
+}
+.dashboardSectionDeleteModalNameBtnCreate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  gap: 5px;
+  color: red;
+  font-size: 12px;
+  font-weight: 600;
+  border: 1px solid red;
+  border-radius: 8px;
+  padding: 0px 8px;
+  cursor: pointer;
+  padding: 8px;
+}
+.dashboardSectionDeleteModalNameBtnCancel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  gap: 5px;
+  color: #034aa6;
+  font-size: 12px;
+  font-weight: 600;
+  border: 1px solid #034aa6;
+  border-radius: 8px;
+  padding: 0px 8px;
+  cursor: pointer;
+  padding: 8px;
+}
+.dashboardSectionDeleteModalAlert {
+  display: flex;
+  gap: 8px;
+  display: flex;
+  font-family: Poppins;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14.65px;
+  letter-spacing: -0.02em;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: red;
+}
+.dashboardSectionDeleteModalAlertImg {
+  width: 10px;
+  height: 10px;
+}
+.dashboardBreadcrumbContainer {
+  display: flex;
+  width: 100%;
+  max-width: 500px;
+  overflow-x: auto;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dashboardSectionBreadcrumb {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+.dashboardSectionBreadcrumbImg {
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+.dashboardSectionBreadcrumbTextHolder {
+  display: flex;
+  font-family: Poppins;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 14.65px;
+  letter-spacing: -0.02em;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #034aa6;
+  cursor: pointer;
+  margin-top: 2px;
+  margin-left: 7px;
+}
+.dashboardSectionBreadcrumbGreater {
+  display: flex;
+  margin-top: 5px;
+  width: 7px;
+  height: 7px;
+}
+.dashboardCreateFolderInputErrorHolder,
+.dashboardRenameInputErrorHolder {
+  display: flex;
+  flex-direction: column;
+}
+.dashboardCreateFolderInputExtra,
+.dashboardRenameInputExtra {
+  border: 1px solid red;
+}
+.dashboardCreateFolderInputError,
+.dashboardRenameInputError {
+  color: red;
+  font-size: 12px;
+}
+.dashboardSectionFavoriteListNoData,
+.dashboardSectionFavoriteCardNoData {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px auto;
+}
+.dashboardImagesSectionDefaultContent,
+.dashboardImagesSectionDefaultContentListDetail {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+.dashboardSectionImagesFolderIconHolder,
+.dashboardSectionImagesFolderIconHolderList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #034aa6;
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+  margin-bottom: 10px;
+}
+.dashboardImagesSectionDefaultContentList {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.dashboardSectionGeneralBreadcrumb {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+.dashboardSectionImageDetailContent {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 160px;
+  height: 160px;
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+.dashboardSectionImageDetailContentImg {
+  width: 160px;
+  height: 160px;
+}
+.dashboardSectionImageDetailContainerList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.dashboardSectionImageDetailContentListImg {
+  width: 120px;
+  height: 120px;
+}
+.dashboardSectionImageDetailContentOverlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 6px;
+}
+.dashboardSectionImageDetailContent:hover
+  .dashboardSectionImageDetailContentOverlay {
+  display: flex;
+  opacity: 1;
+}
+.dashboardImgView,
+.dashboardImgDownload,
+.dashboardImgDelete {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+.dashboardListOverlay {
+  display: block;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 10;
+  background-color: #f4f4f4;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, box-shadow 0.3s;
+  border-radius: 5px;
+  width: 120px;
+  height: 100px;
+  border-radius: 5px;
+}
+.dashboardListOverlayContent {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  gap: 7px;
+}
+.dashboardListOverlayContentView,
+.dashboardListOverlayContentDownload,
+.dashboardListOverlayContentDelete {
+  display: flex;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: bold;
+  color: rgba(3, 74, 166, 1);
+}
+.dashboardListOverlayListImg {
+  width: 20px;
+  height: 20px;
+  color: #034aa6;
+}
+.dashboardDeleteModalContent {
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  gap: 10px;
+  cursor: pointer;
+}
+.dashboardDeleteModalContent:hover {
+  background-color: #034aa6;
+  color: white;
+  border-radius: 5px;
+}
+
+@keyframes dashboardSectionSlideIn {
+  0% {
+    transform: translateX(-20%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes dashboardCollectionSlideIn {
+  0% {
+    transform: translateX(-20%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes dashboardCreateFolderModalSlideIn {
+  0% {
+    transform: translateX(-20%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
