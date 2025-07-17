@@ -211,96 +211,72 @@
 
 // src/offscreen/recorder.js
 console.log("UnifiedMeetingSummarizer: Offscreen recorder.js loaded.");
+function relayToBackground(...args) {
+  try { chrome.runtime.sendMessage({ action: 'offscreenLog', payload: args }); } catch {}
+}
 
-let recorder = null;
-let audioChunks = [];
+chrome.runtime.onMessage.addListener(async (msg, sender, respond) => {
+  relayToBackground("Offscreen: message received:", msg);
+  if (msg.target !== "offscreen") return;
 
-// Listen for messages from background.js
-chrome.runtime.onMessage.addListener(async (message, sender, sendResponse) => {
-    // Log and only act if this message is intended for the offscreen document
-    console.log("Offscreen received message:", message);
-
-    if (message.target !== 'offscreen') return;
-
-    // ---- Start Tab Recording ----
-    if (message.type === 'startRecording') {
-        console.log('Offscreen: Starting tab audio recording...');
-         console.log("Offscreen: startRecording received, streamId:", message.data.streamId);
-        const { streamId, duration } = message.data;
-
-          console.log("Offscreen: streamId received for tab recording:", streamId);
-        try {
-            // Get the tab's audio using the provided streamId
-            const stream = await navigator.mediaDevices.getUserMedia({
-                audio: {
-                    mandatory: {
-                        chromeMediaSource: 'tab',
-                        chromeMediaSourceId: streamId
-                    }
-                }
-            });
-
-            recorder = new MediaRecorder(stream);
-            audioChunks = [];
-            console.log("Offscreen: MediaRecorder created for tab audio");
-
-            recorder.ondataavailable = (event) => {
-                if (event.data.size > 0) {
-                    audioChunks.push(event.data);
-                }
-            };
-
-            recorder.onstop = () => {
-                console.log('Offscreen: Tab audio recording stopped, preparing to send base64 audio...');
-                const blob = new Blob(audioChunks, { type: 'audio/webm' });
-                const reader = new FileReader();
-                reader.onloadend = () => {
-                    const base64Audio = reader.result.split(',')[1];
-                    chrome.runtime.sendMessage({
-                        action: 'tabAudioRecorded',
-                        audioBase64: base64Audio
-                    });
-                    console.log("Offscreen: Sent tabAudioRecorded back to background.", base64Audio.length);
-                    recorder = null;
-                    audioChunks = [];
-                };
-                reader.readAsDataURL(blob);
-            };
-
-            recorder.start();
-            console.log('Offscreen: MediaRecorder started for tab audio');
-            console.log('Offscreen: Recorder will auto-stop in', duration, 'ms');
-
-            if (duration) {
-                setTimeout(() => {
-                    if (recorder && recorder.state !== 'inactive') {
-                        recorder.stop();
-                        console.log('Offscreen: Auto-stopping tab audio after duration.');
-                    }
-                }, duration);
-            }
-            sendResponse({ status: 'recording_started' });
-        } catch (err) {
-            console.error('Offscreen: Failed to start recording', err);
-            chrome.runtime.sendMessage({
-                action: 'recordingError',
-                error: err.message
-            });
-            alert("Offscreen recording error: " + err.message);
-            sendResponse({ status: 'error', error: err.message });
-        }
-        return true; // For async sendResponse
+  if (msg.type === "startRecording") {
+    relayToBackground("Offscreen: startRecording received, streamId:", msg.data?.streamId);
+    const { streamId, duration } = msg.data || {};
+    if (!streamId) {
+      relayToBackground("Offscreen: No streamId received, cannot record.");
+      respond({ status: "error", error: "No streamId provided" });
+      return true;
     }
-
-    // ---- Stop Tab Recording ----
-    if (message.type === 'stopRecording') {
-        if (recorder && recorder.state !== 'inactive') {
+    try {
+      relayToBackground("Offscreen: calling getUserMedia for tab streamId:", streamId);
+      const stream = await navigator.mediaDevices.getUserMedia({
+        audio: { mandatory: { chromeMediaSource: "tab", chromeMediaSourceId: streamId } }
+      });
+      relayToBackground("Offscreen: got stream, creating MediaRecorder...");
+      recorder = new MediaRecorder(stream);
+      audioChunks = [];
+      recorder.ondataavailable = (event) => {
+        if (event.data.size > 0) audioChunks.push(event.data);
+      };
+      recorder.onstop = () => {
+        relayToBackground("Offscreen: Tab audio recording stopped, preparing to send base64 audio...");
+        const blob = new Blob(audioChunks, { type: "audio/webm" });
+        const reader = new FileReader();
+        reader.onloadend = () => {
+          const base64Audio = reader.result.split(',')[1];
+          chrome.runtime.sendMessage({ action: "tabAudioRecorded", audioBase64: base64Audio });
+          relayToBackground("Offscreen: Sent tabAudioRecorded back to background.", base64Audio?.length || 0);
+        };
+        reader.readAsDataURL(blob);
+      };
+      relayToBackground("Offscreen: Starting MediaRecorder for tab audio...");
+      recorder.start();
+      relayToBackground("Offscreen: MediaRecorder started for tab audio.");
+      if (duration) {
+        setTimeout(() => {
+          if (recorder && recorder.state !== 'inactive') {
             recorder.stop();
-            console.log('Offscreen: Recorder stopped via message.');
-        } else {
-            console.warn('Offscreen: Recorder was already inactive or not started.');
-        }
-        sendResponse({ status: 'recording_stopped' });
-        return true;
+            relayToBackground("Offscreen: Auto-stopping tab audio after duration.");
+          }
+        }, duration);
+      }
+      respond({ status: "recording_started" });
+    } catch (err) {
+      relayToBackground("Offscreen: Failed to start recording", err?.message || err);
+      chrome.runtime.sendMessage({ action: "recordingError", error: err?.message || String(err) });
+      respond({ status: "error", error: err?.message || String(err) });
     }
+    return true;
+  }
+
+  if (msg.type === "stopRecording") {
+    if (recorder && recorder.state !== "inactive") {
+      recorder.stop();
+      relayToBackground("Offscreen: Recorder stopped via message.");
+    } else {
+      relayToBackground("Offscreen: Recorder was already inactive or not started.");
+    }
+    respond({ status: "recording_stopped" });
+    return true;
+  }
 });

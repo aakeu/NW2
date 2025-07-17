@@ -22,8 +22,6 @@ import './sidebar.css'
 // }
 
 
-//Video Summary
-// src/sidebar/SiderContainer.tsx
 
 // src/sidebar/SiderContainer.tsx
 
